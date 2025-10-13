@@ -192,9 +192,9 @@ const Hero = () => {
             </div>
           </div>
           <div className="home__hero__line centerdivlinevideo">
-            <div className="sentence">
-              <font style={{ verticalAlign: "inherit" }}>Infl&nbsp;</font>
-            </div>
+            {/* <div className="sentence"> */}
+              {/* <font style={{ verticalAlign: "inherit" }}>Infl&nbsp;</font> */}
+            {/* </div> */}
             {/* <div className="sentence">
               <font style={{ verticalAlign: "inherit" }}>the center&nbsp;</font>
 
@@ -215,13 +215,13 @@ const Hero = () => {
                 ></video>
               </div>
               <div className="sentence">
-              <font style={{ verticalAlign: "inherit" }}>&nbsp;ence,</font>
+              <font style={{ verticalAlign: "inherit" }}>Influence,</font>
               </div>
               {/* <div className="sentence">
               <font style={{ verticalAlign: "inherit" }}>&nbsp; of</font>
               </div> */}
           </div>
-          <div className="home__hero__line">
+          <div className="home__hero__line btmlinetext">
             <div className="sentence">And Modern Media.</div>
           </div>
          
