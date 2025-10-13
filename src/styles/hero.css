@@ -92,6 +92,10 @@
   .home__hero__line:first-child {
     margin-left: -0.5em;
 }
+.home__hero__line:nth-child(3) {
+  /* margin-left: 1.27em; */
+  margin-left: 2em;
+}
 }
 @media (min-width: 1200px) {
   /* .home__hero__inner {
