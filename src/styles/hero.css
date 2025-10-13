@@ -1,0 +1,238 @@
+/* Hero2 */
+.home__hero {
+  height: var(--screen-height);
+  z-index: 2;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0;
+  color: #fff;
+  font-family: var(--secondaryfontBold);
+  background-color: var(--background);
+}
+
+@media (min-width: 760px) {
+  .home__hero__line:first-child {
+    /* margin-left: 1.69em; */
+    margin-left: 0;
+  }
+}
+
+.home__hero__line:nth-child(3) {
+  margin-left: 1.27em;
+}
+
+@media (min-width: 760px) {
+  .home__hero__line:nth-child(3) {
+    margin-left: 1.81em;
+  }
+}
+
+.home__hero__line:nth-child(4) {
+  margin-left: 1.27em;
+}
+
+@media (min-width: 760px) {
+  .home__hero__line:nth-child(4) {
+    margin-left: 1.83em;
+  }
+}
+
+.home__hero__line:not(:first-child) {
+  margin-top: 0.07em;
+}
+
+@media (min-width: 760px) {
+  .home__hero__line:not(:first-child) {
+    margin-top: -0.085em;
+  }
+}
+
+.home__hero__line .small,
+.home__hero__line small {
+  font-size: 0.3em;
+  letter-spacing: 0.008em;
+}
+
+.home__hero__line sup {
+  line-height: 0;
+}
+.home__hero__inner {
+  /* font-size: calc(1.475rem + 2.7vw); */
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  /* line-height: 1; */
+  margin-bottom: 7rem !important;
+  font-size: 6vw;
+}
+
+@media (min-width: 760px) {
+  .home__hero__inner {
+    margin-bottom: 0 !important;
+  }
+}
+@media (min-width: 992px) {
+  .home__hero__inner {
+    /* font-size: 8vw; */
+    font-size: 5vw;
+  }
+}
+@media (min-width: 1200px) {
+  /* .home__hero__inner {
+    font-size: 10.5vw
+  } */
+}
+@media (min-width: 1400px) {
+  .home__hero__inner {
+    /* font-size: 12rem; */
+  }
+}
+body:not(.animation-ended) .home__hero .home__hero__line {
+  -webkit-clip-path: polygon(0 0, 125% 0, 125% 125%, 0 125%);
+  clip-path: polygon(0 0, 125% 0, 125% 125%, 0 125%);
+}
+
+body:not(.animation-ended) .home__hero .sentence {
+  -webkit-transform: translateY(120%);
+  transform: translateY(120%);
+}
+
+.home__hero__video {
+  display: inline-block;
+  height: 3.1rem;
+  pointer-events: none;
+  width: 3.1rem;
+  z-index: 1;
+}
+.text-center {
+  text-align: center !important;
+}
+.sentence{
+    text-transform: uppercase;
+
+}
+.sentence font{
+    text-transform: uppercase;
+}
+@media (max-width: 479px){
+.home__hero__inner{
+      font-size: 6vw;
+}
+.text-center{
+    text-align: start !important;
+}
+}
+@media (min-width: 769px) {
+  .home__hero__video {
+    height: 6.0416666667vw;
+    /* width: 15.9722222222vw; */
+    width: 6vw;
+  }
+  .text-md-start {
+    text-align: left !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .home__hero__video {
+    height: 5rem;
+    width: 5rem;
+  }
+}
+
+.home__hero__video.is-finished {
+  cursor: none;
+  pointer-events: all;
+}
+
+.home__hero__video video {
+  display: block;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+  clip-path: polygon(
+    0 0,
+    25% 0,
+    50% 20%,
+    75% 0,
+    100% 0,
+    100% 71%,
+    50% 71%,
+    0 100%
+  );
+}
+
+.home__hero__metas {
+  bottom: calc(3rem + var(--screen-height) - var(--app-height));
+  font-family: var(--secondaryfontRegular);
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+  opacity: 0;
+  visibility: hidden;
+  /* height: 14px; */
+  /* background-color: rgb(0, 255, 68); */
+}
+
+.home__hero__line.centerdivlinevideo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (orientation: landscape) {
+  .home__hero__metas {
+    bottom: 3rem;
+  }
+}
+
+.home__video {
+  /* padding-bottom: 56.25%; */
+  position: relative;
+  height: 100vh;
+  height: var(--app-height);
+
+}
+
+
+
+.home__video:after,
+.home__video:before {
+  content: "";
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* .home__video:before {
+  border: 0.1rem solid hsla(0, 0%, 100%, 0.3);
+  border-radius: 50%;
+  height: 9rem;
+  width: 9rem;
+}
+
+.home__video:after {
+  border-bottom: 0.75rem solid transparent;
+  border-left: 1rem solid #fff;
+  border-top: 0.75rem solid transparent;
+  display: inline-block;
+  height: 0;
+  left: calc(50% + 0.2rem);
+  width: 0;
+} */
+@media (orientation: landscape) {
+  .home__video {
+    height: 100vh;
+    padding-bottom: 0;
+  }
+}
+/* Hero2 */
