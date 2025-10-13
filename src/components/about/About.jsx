@@ -253,7 +253,7 @@ const About = () => {
         pin: true,
         markers: true,
       },
-      defaults: { ease: "none", duration: 1 },
+      defaults: { ease: "linear", duration: 1 },
     });
     // Stage 1: scale everything in together
     tl.to(
@@ -275,7 +275,7 @@ const About = () => {
       tl.to(layer, { scale: 3 + i * 0.2, duration:0.5 }, "b");
     });
 
-    // tl.to(center, { scaleY: 3, scaleX: 2.5, duration:0.5 }, "b");
+    tl.to(center, { scaleY: 3, scaleX: 2.5, duration:0.5 }, "b");
 
     // Stage 4: expand .home-intro-description after "b"
     tl.to(
