@@ -1,0 +1,68 @@
+.BrandAdvertismentBanner_container {
+  background-color: #000;
+  padding: 40px;
+  color: #fff;
+  text-align: left;
+}
+
+.BrandAdvertismentBanner_heading {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.BrandAdvertismentBanner_cardContainer {
+  display: grid;
+  gap: 20px;
+  justify-content: start;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+}
+
+.BrandAdvertismentBanner_card {
+  background-color: #1e1e1e;
+  /* width: 400px; */
+  height: 450px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px){
+.BrandAdvertismentBanner_cardContainer{
+      /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+
+}
+}
+@media (max-width: 768px) {
+  .BrandAdvertismentBanner_heading {
+    font-size: 22px;
+  }
+
+  .BrandAdvertismentBanner_card {
+    /* width: 100%; */
+    /* max-width: 100%; */
+    height: 400px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .BrandAdvertismentBanner_cardContainer {
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 479px) {
+  .BrandAdvertismentBanner_heading {
+    font-size: 20px;
+  }
+
+  .BrandAdvertismentBanner_card {
+        height: 400px;
+  }
+  
+  .BrandAdvertismentBanner_cardContainer {
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+}

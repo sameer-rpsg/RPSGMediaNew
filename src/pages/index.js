@@ -1,3 +1,4 @@
+import BrandAdvertismentBanner from '@/components/home/BrandAdvertismentBanner'
 import Hero from '@/components/home/Hero'
 import HomeAbout from '@/components/home/HomeAbout'
 import StickyCardSection from '@/components/home/StickyCardSection'
@@ -9,6 +10,7 @@ const index = () => {
       <Hero/>
       <HomeAbout/>
       <StickyCardSection/>
+      <BrandAdvertismentBanner/>
     </div>
   )
 }
