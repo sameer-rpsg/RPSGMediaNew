@@ -13,16 +13,20 @@ const HomeAbout = () => {
             {/*[*/}
             <div>
               <div className="about_para">
-               We build Iconic Media Brands That Shape Culture, Spark Conversations, And Drive Influence &mdash; Across 
-               <BottomLineAnimation animatedText=" Entertainment " />,
+                <span>
+                  We build Iconic Media Brands That Shape Culture, Spark
+                  Conversations, And Drive Influence &mdash; Across
+                  Entertainment, Lifestyle, Luxury.
+                </span>
+                {/* <BottomLineAnimation animatedText=" Entertainment " />,
                <BottomLineAnimation animatedText="&nbsp;Lifestyle " /> , 
                 And
-               <BottomLineAnimation animatedText=" Luxury" />.
-                  
+               <BottomLineAnimation animatedText=" Luxury" />. */}
+
                 {/* <Link href="/services" target="_self" rel="noopener noreferrer">
                   
                 </Link>, */}
-                 {/* <Link href="/services" target="_self" rel="noopener noreferrer">
+                {/* <Link href="/services" target="_self" rel="noopener noreferrer">
                   
                 </Link>. */}
               </div>
@@ -35,12 +39,7 @@ const HomeAbout = () => {
         <ul className="list">
           {/*[*/}
           <li className="Home_about_content_item">
-            <div
-              className="split"
-              style={{ top: 0 }}
-             
-              data-v-fa27c953=""
-            />
+            <div className="split" style={{ top: 0 }} data-v-fa27c953="" />
             <div className="Home_about_content_title">
               {/*[*/}
               <h2 className="will-animate">Tomorrow’s brands, today.</h2>
@@ -63,10 +62,9 @@ const HomeAbout = () => {
                 <Link
                   href="/services"
                   className="b-arrow underlined link-active-full-small"
-                 
                 >
                   <span className="icon icon-b">
-                  <GoArrowUpRight />
+                    <GoArrowUpRight />
                   </span>
                   <span className="content_more">
                     {/*[*/}Learn more{/*]*/}

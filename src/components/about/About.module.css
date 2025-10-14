@@ -2,7 +2,8 @@
     position: relative;
     /* margin-top: clamp(0px, 83.071px + 100vw * -.0489, 64px); */
     margin-bottom: 64px;
-    padding: 4rem 2rem;
+    padding: 3rem 3rem;
+    font-family: var(--secondaryfontMedium);
 }
 
 .manifesto_header {
@@ -86,48 +87,59 @@
     /* flex-flow: row wrap; */
     justify-content: space-between;
 }
+
 .manifesto>.manifesto_statements>li>h3 {
     margin: clamp(12px, 6.033px + 100vw * .0153, 32px) 0;
 }
+
 .h2 {
-    font-size: /*lrs=64*/ clamp(32px, 22.484px + 100vw * .0244, 64px);
+    font-size:
+        /*lrs=64*/
+        clamp(32px, 22.484px + 100vw * .0244, 64px);
     line-height: 1.1;
     letter-spacing: -.07em;
     ---letter-spacing: -0.07em;
     flex: 0 0 16.6666666667%;
     max-width: 16.6666666667%;
     font-weight: 300;
-        margin-left: 50%;
+    margin-left: 50%;
 }
+
 .p_small {
-    font-size: /*lrs=18*/ clamp(16px, 15.415px + 100vw * .0015, 18px);
+    font-size:
+        /*lrs=18*/
+        clamp(16px, 15.415px + 100vw * .0015, 18px);
     line-height: 1.2;
     letter-spacing: -.04em;
     ---letter-spacing: -0.04em;
     font-weight: 300;
-   transition: opacity 0.5s ease, color 0.5s ease;
-  will-change: opacity, color;
+    transition: opacity 0.5s ease, color 0.5s ease;
+    will-change: opacity, color;
     opacity: 0.4;
-        max-width: 25%;
+    max-width: 25%;
 }
+
 .p_small.active {
-  opacity: 1;
+    opacity: 1;
 }
+
 @media screen and (max-width:1290) {
     .manifesto_para {
         /* max-width:50.5%; */
         /* margin-left: 41.6666666667%; */
     }
+
     /* .h2{
         margin-left: 58.3333333333%;
     } */
-    .p_small{
+    .p_small {
         max-width: 25%;
     }
-    
+
 }
-@media screen and (max-width:991px){
-.p_small{
+
+@media screen and (max-width:991px) {
+    .p_small {
         max-width: 35%;
     }
 }
@@ -148,18 +160,22 @@
     .manifesto_para {
         max-width: 100%;
     }
-    .p_small{
+
+    .p_small {
         max-width: 50%;
     }
-    .h2{
+
+    .h2 {
         margin-left: 0;
     }
 }
-@media screen and (max-width:479px){
-    .manifesto_header{
+
+@media screen and (max-width:479px) {
+    .manifesto_header {
         flex-direction: column;
     }
-.p_small{
+
+    .p_small {
         max-width: 80%;
     }
 }
@@ -167,137 +183,156 @@
 
 /* leadership */
 .leadershipSection {
-  padding: 6rem 2rem;
-  background: #fff;
-  color: #111;
+    padding: 6rem 3rem;
+    background: #fff;
+    color: #111;
+    font-family: var(--secondaryfontMedium);
 }
 
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
+.leadershipSection_container {
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.heading {
-  font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.leadershipSection_heading {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* Featured Leader */
-.featured {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: start;
-  gap: 2rem;
-  margin-bottom: 4rem;
+.leadershipSection_featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 2rem;
+    margin-bottom: 4rem;
 }
 
 .featuredImage img {
-  width: 100%;
-  /* aspect-ratio: 1 / 1.1; */
-  object-fit: cover;
-  background: #1a1a1a;
-  height: 100%;
+    width: 100%;
+    /* aspect-ratio: 1 / 1.1; */
+    object-fit: cover;
+    background: #1a1a1a;
+    height: 100%;
 }
 
 .featuredContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 0.75rem;
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.75rem;
+    height: 100%;
 }
 
 .quote {
-  font-size: 0.9rem;
-  color: #333;
-  line-height: 1.5;
-  margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 2rem;
 }
 
-.name {
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin: 0;
+.leadershipSection_name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0;
 }
 
 .role {
-  font-size: 0.85rem;
-  color: #888;
-  margin: 0;
+    font-size: 0.85rem;
+    color: #888;
+    margin: 0;
 }
 
 .linkedin {
-  font-size: 0.85rem;
-  margin-top: 0.75rem;
-  text-decoration: none;
-  color: #111;
-  font-weight: 500;
-  transition: opacity 0.3s ease;
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
 }
 
 .linkedin:hover {
-  opacity: 0.6;
-}
-.gridTop{
-     display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  gap: 2rem;
-}
-/* Grid of Leaders */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+    opacity: 0.6;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
+.gridTop {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 2rem;
+}
+
+/* Grid of Leaders */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.leadershipSection_card {
+    display: flex;
+    flex-direction: column;
 }
 
 .imageWrapper {
-  width: 100%;
-  aspect-ratio: 1 / 1.1;
-  background: #1a1a1a;
-  margin-bottom: 0.5rem;
+    width: 100%;
+    aspect-ratio: 1 / 1.1;
+    background: #1a1a1a;
+    margin-bottom: 0.5rem;
 }
 
 .imageWrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .featured {
-    grid-template-columns: 1fr;
-  }
-  .featuredImage {
-    order: -1;
-  }
+    .leadershipSection_featured {
+        grid-template-columns: 1fr;
+    }
+
+    .featuredImage {
+        order: -1;
+    }
+}
+@media (max-width: 768px){
+.leadershipSection{
+    padding: 4rem 2rem;
+}
+}
+@media (max-width: 600px) {
+    .leadershipSection_heading {
+        font-size: 1.6rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    .quote {
+        font-size: 0.85rem;
+    }
+
+    .linkedin {
+        font-size: 0.8rem;
+    }
+
+    .gridTop {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+    }
 }
 
-@media (max-width: 600px) {
-  .heading {
-    font-size: 1.6rem;
-  }
-
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-  }
-
-  .quote {
-    font-size: 0.85rem;
-  }
-
-  .linkedin {
-    font-size: 0.8rem;
-  }
+@media (max-width: 479px) {
+    .leadershipSection {
+        padding: 2rem 1rem;
+    }
 }
 
 /* leadership */

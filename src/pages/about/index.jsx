@@ -9,7 +9,7 @@ const index = () => {
       <About />
     <Manifesto/>
     <Leadership/>
-      <section style={{ height: "100vh" }}></section>
+
     </div>
   )
 }

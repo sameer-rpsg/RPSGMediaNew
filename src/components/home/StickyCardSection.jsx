@@ -8,6 +8,9 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 gsap.registerPlugin(ScrollTrigger);
 
 const StickyCardSection = () => {
@@ -150,9 +153,15 @@ const StickyCardSection = () => {
             <div className="card_social_wrapper">
               <TextAnimate textAnim="Learn More" />
               <div className="dots">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span>
+                <FaInstagram />
+                </span>
+                <span>
+                    <FaFacebookF />
+                </span>
+                <span>
+                    <FaXTwitter />
+                </span>
               </div>
             </div>
             </div>

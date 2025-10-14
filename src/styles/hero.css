@@ -12,7 +12,7 @@
   background-color: var(--background);
 }
 .home__hero__line:first-child{
-    margin-left: -1em;
+    margin-left: -0.7em;
 }
 .btmlinetext{
 
@@ -31,7 +31,7 @@
 
 .home__hero__line:nth-child(3) {
   /* margin-left: 1.27em; */
-  margin-left: 2.4em;
+  margin-left: 1.8em;
 }
 
 @media (min-width: 760px) {
@@ -102,13 +102,27 @@
     font-size: 10.5vw
   } */
 }
+@media (min-width: 1024px) {
+    .home__hero__line:first-child {
+        margin-left: 0.2em;
+    }
+        .home__hero__line:nth-child(3) {
+        margin-left: 2.7em;
+    }
+    .home__hero__line.centerdivlinevideo{
+        margin-left: 3.6em;
+    }
+}
 @media (min-width: 1400px) {
   .home__hero__inner {
     /* font-size: 12rem; */
   }
   .home__hero__line:first-child {
-    margin-left: -0.9em;
+    margin-left: -0.2em;
 }
+.home__hero__line:nth-child(3) {
+        margin-left: 2.3em;
+    }
 }
 body:not(.animation-ended) .home__hero .home__hero__line {
   -webkit-clip-path: polygon(0 0, 125% 0, 125% 125%, 0 125%);

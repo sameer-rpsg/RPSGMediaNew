@@ -82,11 +82,11 @@ const Leadership = () => {
 
   return (
     <section className={styles.leadershipSection}>
-      <div className={styles.container}>
+      <div className={styles.leadershipSection_container}>
         <div className={styles.gridTop}>
-          <h2 className={styles.heading}>Our Leadership</h2>
+          <h2 className={styles.leadershipSection_heading}>Our Leadership</h2>
 
-          <div className={styles.featured}>
+          <div className={styles.leadershipSection_featured}>
             <div className={styles.featuredImage}>
               <Image
                 width={1000}
@@ -99,7 +99,7 @@ const Leadership = () => {
             <div className={styles.featuredContent}>
               <div>
                 <p className={styles.quote}>"{featured.quote}"</p>
-                <p className={styles.name}>{featured.name}</p>
+                <p className={styles.leadershipSection_name}>{featured.name}</p>
                 <p className={styles.role}>{featured.role}</p>
               </div>
               <TextAnimate textAnim="LinkedIn" hreff="" />
@@ -117,7 +117,7 @@ const Leadership = () => {
         </div>
         <div className={styles.grid}>
           {others.map((leader, index) => (
-            <div key={index} className={styles.card}  ref={(el) => (cardsRef.current[index] = el)}>
+            <div key={index} className={styles.leadershipSection_card}  ref={(el) => (cardsRef.current[index] = el)}>
               <div className={styles.imageWrapper}>
                 <Image
                   width={1000}
@@ -127,7 +127,9 @@ const Leadership = () => {
                   loading="lazy"
                 />
               </div>
-              <p className={styles.name}>{leader.name}</p>
+              <p className={styles.leadershipSection_name}>
+                {console.log(leader.name)}
+                {leader.name}</p>
               <p className={styles.role}>{leader.role}</p>
             </div>
           ))}

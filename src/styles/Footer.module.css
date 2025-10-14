@@ -1,8 +1,8 @@
 .footer {
   background: linear-gradient(to bottom, #000, #6b0079);
   color: #fff;
-  padding: 5rem 4rem 3rem;
-  font-family: "Inter", sans-serif;
+  padding: 5rem 3rem 3rem;
+    font-family: var(--secondaryfontMedium);
   position: relative;
 }
 
