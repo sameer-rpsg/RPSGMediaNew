@@ -33,9 +33,9 @@ const StickyCardSection = () => {
       PosterImgUrl: "/assets/esquireposter.jpg",
       logoImgUrl: "/assets/esquire-logo-new.png",
       paragraphs: [
-        "We continue to define creative excellence through innovation and integrity in storytelling.",
-        "Our editorial voices set standards in luxury, lifestyle, and entertainment journalism.",
-        "We deliver meaningful conversations that inspire change and celebrate achievement.",
+        "Since our inception, we’ve brought together globally respected editorial voices to inform, inspire, and influence. From entertainment to luxury, our brands shape conversations that matter. We invest deeply in every title we own, giving each one the focus, integrity, and creative ambition it deserves—building media that endures, not just performs.",
+        "We invest deeply in every title we own, giving each one the focus, integrity, and creative ambition it deserves—building media that endures, not just performs.",
+        "From entertainment to luxury, we bring together voices that shape culture and drive meaningful storytelling across industries.",
       ],
       website: "www.hollywoodreporterindia.com",
       mediaKit: "Download Media Kit",
@@ -48,9 +48,9 @@ const StickyCardSection = () => {
       PosterImgUrl: "/assets/manifestposter.jpg",
       logoImgUrl: "/assets/Manifest_logo.png",
       paragraphs: [
-        "Every story we tell reflects passion, purpose, and precision.",
-        "We build media that lasts—content that informs, inspires, and connects audiences globally.",
-        "Integrity and creativity are at the core of every project we pursue.",
+        "Since our inception, we’ve brought together globally respected editorial voices to inform, inspire, and influence. From entertainment to luxury, our brands shape conversations that matter. We invest deeply in every title we own, giving each one the focus, integrity, and creative ambition it deserves—building media that endures, not just performs.",
+        "We invest deeply in every title we own, giving each one the focus, integrity, and creative ambition it deserves—building media that endures, not just performs.",
+        "From entertainment to luxury, we bring together voices that shape culture and drive meaningful storytelling across industries.",
       ],
       website: "www.hollywoodreporterindia.com",
       mediaKit: "Download Media Kit",
@@ -63,9 +63,9 @@ const StickyCardSection = () => {
       PosterImgUrl: "/assets/Robbreport.png",
       logoImgUrl: "/assets/Robb_Report_white_1.png",
       paragraphs: [
-        "The Hollywood Reporter India represents a bold new vision for storytelling in the digital age.",
-        "Our platform bridges cultures, showcasing creativity from around the world.",
-        "We remain committed to authentic journalism that inspires future generations.",
+        "Since our inception, we’ve brought together globally respected editorial voices to inform, inspire, and influence. From entertainment to luxury, our brands shape conversations that matter. We invest deeply in every title we own, giving each one the focus, integrity, and creative ambition it deserves—building media that endures, not just performs.",
+        "We invest deeply in every title we own, giving each one the focus, integrity, and creative ambition it deserves—building media that endures, not just performs.",
+        "From entertainment to luxury, we bring together voices that shape culture and drive meaningful storytelling across industries.",
       ],
       website: "www.hollywoodreporterindia.com",
       mediaKit: "Download Media Kit",
@@ -129,6 +129,7 @@ const StickyCardSection = () => {
 
           {/* Right side - Text content */}
           <div className="hollywood-right">
+            <div>
             <h2 className="card_logoImg">
               <Image
                 width={1000}
@@ -154,7 +155,7 @@ const StickyCardSection = () => {
                 <span></span>
               </div>
             </div>
-
+            </div>
             {/* Links */}
             <div className="links">
               <TextAnimate textAnim={card.website} />

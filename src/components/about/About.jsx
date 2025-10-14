@@ -215,9 +215,152 @@
 
 // export default About;
 
+// import React, { useRef, useEffect } from "react";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const About = () => {
+//   const containerRef = useRef(null);
+//   const centerRef = useRef(null);
+//   const layersRef = useRef([]);
+//   const introDescRef = useRef(null); // new ref
+
+//   useEffect(() => {
+//     const container = containerRef.current;
+//     const center = centerRef.current;
+//     const layers = layersRef.current;
+//     const introDesc = introDescRef.current;
+
+//     gsap.set([center, ...layers], {
+//       transformOrigin: "center center",
+//       scale: 0,
+//     });
+
+//     // Make sure introDesc starts with height 0
+//     gsap.set(introDesc, {
+//       height: 0,
+//       overflow: "hidden",
+//     });
+
+//     const tl = gsap.timeline({
+//       scrollTrigger: {
+//         trigger: container,
+//         start: "top top",
+//         end: "+=700%",
+//         scrub: 1.2,
+//         pin: true,
+//         markers: true,
+//       },
+//       defaults: { ease: "linear", duration: 1 },
+//     });
+//     // Stage 1: scale everything in together
+//     tl.to(
+//       [center, ...layers],
+//       {
+//         scale: (i, target) =>
+//           window.innerWidth > 479 ? `0.7 - ${i} * 0.05` : `0.8 - ${i} * 0.05`,
+//       },
+//       0
+//     );
+
+//     // Stage 2: first wave (expand outward)
+//     layers.forEach((layer, i) => {
+//       tl.to(layer, { scale: 0.8 + i * 0.2, duration:0.5 }, "a");
+//     });
+
+//     // Stage 3: second wave (further expansion)
+//     layers.forEach((layer, i) => {
+//       tl.to(layer, { scale: 3 + i * 0.2, duration:0.5 }, "b");
+//     });
+
+//     tl.to(center, { scaleY: 3, scaleX: 2.5, duration:0.5 }, "b");
+
+//     // Stage 4: expand .home-intro-description after "b"
+//     tl.to(
+//       introDesc,
+//       {
+//         height: introDesc.scrollHeight, // animate to full content height
+//         duration: 1,
+//         //   ease: "power2.inOut",
+//       },
+//       "b+=0.5"
+//     ); // start a little after "b" completes
+
+//     // GSAP
+//     tl.to(
+//       introDesc,
+//       {
+//         "--mask-pos": "0",
+//         duration: 1,
+//         ease: "power2.inOut",
+//       },
+//       "b+=0.5"
+//     );
+
+//     return () => {
+//       ScrollTrigger.getAll().forEach((t) => t.kill());
+//       tl.kill();
+//     };
+//   }, []);
+
+//   return (
+//     <div className="layered-container" ref={containerRef}>
+//       <div className="layers-wrapper">
+//         {[...Array(8)].map((_, i) => (
+//           <div
+//             key={i}
+//             className={`layer layer_${i + 1}`}
+//             ref={(el) => (layersRef.current[i] = el)}
+//           />
+//         ))}
+//       </div>
+
+//       <div className="center-content" ref={centerRef}></div>
+
+//       <div className="card_about_content">
+//         <h2 className="about_title">About</h2>
+//         <div className="home-intro-description" ref={introDescRef}>
+//           <p className="about_intro_desc">
+//             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
+//             quis nemo corporis accusamus eum, cupiditate voluptatum pariatur
+//             nihil non commodi inventore debitis assumenda harum earum ab
+//             necessitatibus ipsa? Possimus, accusantium.
+//           </p>
+//           <br />
+//           <p className="about_intro_desc">
+//             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
+//             quis nemo corporis accusamus eum, cupiditate voluptatum pariatur
+//             nihil non commodi inventore debitis assumenda harum earum ab
+//             necessitatibus ipsa? Possimus, accusantium.
+//           </p>
+//           <br />
+//           <p className="about_intro_desc">
+//             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
+//             quis nemo corporis accusamus eum, cupiditate voluptatum pariatur
+//             nihil non commodi inventore debitis assumenda harum earum ab
+//             necessitatibus ipsa? Possimus, accusantium.
+//           </p>
+//           <br />
+//           <p className="about_intro_desc">
+//             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
+//             quis nemo corporis accusamus eum, cupiditate voluptatum pariatur
+//             nihil non commodi inventore debitis assumenda harum earum ab
+//             necessitatibus ipsa? Possimus, accusantium.
+//           </p>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default About;
+
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -226,58 +369,97 @@ const About = () => {
   const centerRef = useRef(null);
   const layersRef = useRef([]);
   const introDescRef = useRef(null); // new ref
-
-  useEffect(() => {
-    const container = containerRef.current;
-    const center = centerRef.current;
-    const layers = layersRef.current;
+  useGSAP(() => {
     const introDesc = introDescRef.current;
-
-    gsap.set([center, ...layers], {
-      transformOrigin: "center center",
-      scale: 0,
-    });
-
-    // Make sure introDesc starts with height 0
-    gsap.set(introDesc, {
-      height: 0,
-      overflow: "hidden",
-    });
-
-    const tl = gsap.timeline({
+    var tl = gsap.timeline({
       scrollTrigger: {
-        trigger: container,
+        trigger: ".layered-container",
         start: "top top",
-        end: "+=700%",
-        scrub: 1.2,
-        pin: true,
+        end: "600% top",
+        scrub: 0.4,
         markers: true,
+        pin: true,
       },
-      defaults: { ease: "linear", duration: 1 },
     });
-    // Stage 1: scale everything in together
+let mm = gsap.matchMedia();
+
+mm.add("(min-width: 480px)", () => {
+      // tl.from(".center-content", {
+    //   width: 0,
+    //   ease: "linear",
+    // },"a");
+    tl.from(".layer_1", {
+      width: 0,
+      ease: "linear",
+    },"a");
+    tl.from(".layer_2,.layer_3,.layer_4,.layer_5,.layer_6,.layer_7,.layer_8", {
+      opacity: 0,
+      width:"30%",
+      ease: "linear",
+      stagger: 0.01,
+    });
     tl.to(
-      [center, ...layers],
+      ".layer_1",
       {
-        scale: (i, target) =>
-          window.innerWidth > 479 ? `0.7 - ${i} * 0.05` : `0.8 - ${i} * 0.05`,
+        width: "100%",
       },
-      0
+      "pa"
+    );
+    tl.to(
+      ".layer_2",
+      {
+        width: "110%",
+      },
+      "pa"
+    );
+    tl.to(
+      ".layer_3",
+      {
+        width: "120%",
+      },
+      "pa"
+    );
+    tl.to(
+      ".layer_4",
+      {
+        width: "130%",
+      },
+      "pa"
+    );
+    tl.to(
+      ".layer_5",
+      {
+        width: "140%",
+      },
+      "pa"
+    );
+    tl.to(
+      ".layer_6",
+      {
+        width: "150%",
+      },
+      "pa"
+    );
+    tl.to(
+      ".layer_7",
+      {
+        width: "160%",
+      },
+      "pa"
+    );
+    tl.to(
+      ".layer_8",
+      {
+        width: "170%",
+      },
+      "pa"
     );
 
-    // Stage 2: first wave (expand outward)
-    layers.forEach((layer, i) => {
-      tl.to(layer, { scale: 0.8 + i * 0.2, duration:0.5 }, "a");
-    });
-
-    // Stage 3: second wave (further expansion)
-    layers.forEach((layer, i) => {
-      tl.to(layer, { scale: 3 + i * 0.2, duration:0.5 }, "b");
-    });
-
-    tl.to(center, { scaleY: 3, scaleX: 2.5, duration:0.5 }, "b");
-
-    // Stage 4: expand .home-intro-description after "b"
+    // tl.to(".expad", {
+    //   height: "auto",
+    //   ease: "linear",
+    // });
+      
     tl.to(
       introDesc,
       {
@@ -285,10 +467,9 @@ const About = () => {
         duration: 1,
         //   ease: "power2.inOut",
       },
-      "b+=0.5"
     ); // start a little after "b" completes
 
-    // GSAP
+//     // GSAP
     tl.to(
       introDesc,
       {
@@ -296,14 +477,34 @@ const About = () => {
         duration: 1,
         ease: "power2.inOut",
       },
-      "b+=0.5"
     );
+});
 
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-      tl.kill();
-    };
-  }, []);
+// mm.add("(max-width: 479px)", () => {
+//   tl.from(".layer_1", {
+//       height: 0,
+//       width:0,
+//       ease: "linear",
+//     },"a");
+//     tl.from(".layer_2,.layer_3,.layer_4,.layer_5,.layer_6,.layer_7,.layer_8", {
+//       opacity: 0,
+//       height: 0,
+//       width:0,
+//       ease: "linear",
+//       stagger: 0.01,
+//     });
+//     tl.to(
+//       ".layer_1,.layer_2,.layer_3,.layer_4,.layer_5,.layer_6,.layer_7,.layer_8",
+//       {
+//          height: "100%",
+//       width:"100%",
+//       },
+//       "pa"
+//     );
+// });
+
+
+  });
 
   return (
     <div className="layered-container" ref={containerRef}>
@@ -317,25 +518,11 @@ const About = () => {
         ))}
       </div>
 
-      <div className="center-content" ref={centerRef}></div>
+      {/* <div className="center-content" ref={centerRef}></div> */}
 
       <div className="card_about_content">
         <h2 className="about_title">About</h2>
         <div className="home-intro-description" ref={introDescRef}>
-          <p className="about_intro_desc">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
-            quis nemo corporis accusamus eum, cupiditate voluptatum pariatur
-            nihil non commodi inventore debitis assumenda harum earum ab
-            necessitatibus ipsa? Possimus, accusantium.
-          </p>
-          <br />
-          <p className="about_intro_desc">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
-            quis nemo corporis accusamus eum, cupiditate voluptatum pariatur
-            nihil non commodi inventore debitis assumenda harum earum ab
-            necessitatibus ipsa? Possimus, accusantium.
-          </p>
-          <br />
           <p className="about_intro_desc">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
             quis nemo corporis accusamus eum, cupiditate voluptatum pariatur

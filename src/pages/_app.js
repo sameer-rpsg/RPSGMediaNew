@@ -4,6 +4,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import "@/styles/globals.css";
 import "@/styles/hero.css"
 import "@/styles/home.css"
+import "@/styles/advertising.css"
 
 export default function App({ Component, pageProps }) {
 
