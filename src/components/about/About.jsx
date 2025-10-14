@@ -377,7 +377,7 @@ const About = () => {
         start: "top top",
         end: "600% top",
         scrub: 0.4,
-        markers: true,
+        // markers: true,
         pin: true,
       },
     });
