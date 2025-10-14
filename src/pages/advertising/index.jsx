@@ -1,6 +1,6 @@
 import Advertising from "@/components/advertising/Advertising";
 import AdvertisingVideo from "@/components/advertising/AdvertisingVideo";
-import Counter from "@/components/common/Counter";
+// import Counter from "@/components/common/Counter";
 import OurEvents from "@/components/common/OurEvents";
 import Support from "@/components/common/Support";
 import { useGSAP } from "@gsap/react";
@@ -19,7 +19,7 @@ const index = () => {
   return (
     <div className="advertising_main_wrapper">
       <AdvertisingVideo />
-      <Counter />
+      {/* <Counter /> */}
       <Advertising />
       <OurEvents />
       <Support />
