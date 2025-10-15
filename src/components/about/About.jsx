@@ -51,7 +51,7 @@ const About = () => {
           width: 0,
           ease: "linear",
         },
-        ">"
+        ">-0.5"
       );
       tl.to(".text_1reveal", {
         // opacity: 0,
