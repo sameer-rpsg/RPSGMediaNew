@@ -252,6 +252,19 @@ audio, canvas {
   left: 50%;
   transform: translate(-50%, -50%); */
 }
+.scroll_indicator{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  opacity: .7;
+}
+.scroll_indicator span svg{
+  font-size: 2rem;
+}
 .about_titleReveal{
   /* position: absolute;
   top: 50%;
