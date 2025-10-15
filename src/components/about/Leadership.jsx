@@ -15,43 +15,43 @@ const leaders = [
     quote:
       "We have streamlined the outdated and layered agency model to give you direct access to some of the best global talent. No wasted time, no empty promises. Just impactful results.",
     linkedin: "#",
-    image: "/leadership/awarna-jain.jpg", // replace with your real image
+    image: "https://s.rpsg.in/image/s/fh_275/4/81/4e/3_1661531685.jpg", // replace with your real image
     featured: true,
   },
   {
     name: "Rohit Tiwari",
     role: "Head of Web Design",
-    image: "/leadership/rohit-tiwari.jpg",
+    image: "https://strapi-bus-eng-prod.s3.us-east-1.amazonaws.com/unnamed_2_3deba853b2_0a5b91abf2.jpg",
   },
   {
     name: "Rohit Tiwari",
     role: "Head of Web Design",
-    image: "/leadership/rohit-tiwari.jpg",
+    image: "https://strapi-bus-eng-prod.s3.us-east-1.amazonaws.com/unnamed_2_3deba853b2_0a5b91abf2.jpg",
   },
   {
     name: "Rohit Tiwari",
     role: "Head of Web Design",
-    image: "/leadership/rohit-tiwari.jpg",
+    image: "https://strapi-bus-eng-prod.s3.us-east-1.amazonaws.com/unnamed_2_3deba853b2_0a5b91abf2.jpg",
   },
   {
     name: "Rohit Tiwari",
     role: "Head of Web Design",
-    image: "/leadership/rohit-tiwari.jpg",
+    image: "https://strapi-bus-eng-prod.s3.us-east-1.amazonaws.com/unnamed_2_3deba853b2_0a5b91abf2.jpg",
   },
   {
     name: "Rohit Tiwari",
     role: "Head of Web Design",
-    image: "/leadership/rohit-tiwari.jpg",
+    image: "https://strapi-bus-eng-prod.s3.us-east-1.amazonaws.com/unnamed_2_3deba853b2_0a5b91abf2.jpg",
   },
   {
     name: "Rohit Tiwari",
     role: "Head of Web Design",
-    image: "/leadership/rohit-tiwari.jpg",
+    image: "https://strapi-bus-eng-prod.s3.us-east-1.amazonaws.com/unnamed_2_3deba853b2_0a5b91abf2.jpg",
   },
   {
     name: "Rohit Tiwari",
     role: "Head of Web Design",
-    image: "/leadership/rohit-tiwari.jpg",
+    image: "https://strapi-bus-eng-prod.s3.us-east-1.amazonaws.com/unnamed_2_3deba853b2_0a5b91abf2.jpg",
   },
 ];
 
@@ -119,7 +119,7 @@ const Leadership = () => {
           {others.map((leader, index) => (
             <div key={index} className={styles.leadershipSection_card}  ref={(el) => (cardsRef.current[index] = el)}>
               <div className={styles.imageWrapper}>
-                <Image
+                <img
                   width={1000}
                   height={1000}
                   src={leader.image}

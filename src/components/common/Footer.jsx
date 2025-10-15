@@ -44,10 +44,10 @@ const Footer = () => {
         </div>
           <div className={styles.social}>
             <a href="#" target="_blank" rel="noopener noreferrer">
-              Instagram ↗
+              Instagram <GoArrowUpRight />
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer">
-              LinkedIn ↗
+              LinkedIn <GoArrowUpRight />
             </a>
           </div>
 </div>

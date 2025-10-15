@@ -531,7 +531,8 @@ const About = () => {
       tl.to(
         introDesc,
         {
-          height: introDesc.scrollHeight, // animate to full content height
+          height: "auto", // animate to full content height
+          // height: introDesc.scrollHeight, // animate to full content height
           duration: 0.3,
           ease: "linear",
         },
@@ -668,17 +669,12 @@ const About = () => {
           {/* </div> */}
           <div className="home-intro-description" ref={introDescRef}>
             <p className="about_intro_desc">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
-              quis nemo corporis accusamus eum, cupiditate voluptatum pariatur
-              nihil non commodi inventore debitis assumenda harum earum ab
-              necessitatibus ipsa? Possimus, accusantium.
+              Since our inception, we've brough ought together globel y respected editorial voices nform, inspire, and infuarce. From entertainment to ury our brendesh conversations that matter we invest ceecly in every the one can ghing asch are Loury, our brer de we own, ghing each one the locus, meghty and comets deserves-building media that endures, not just performs. ands show conversations that matter.
+
             </p>
             <br />
             <p className="about_intro_desc">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
-              quis nemo corporis accusamus eum, cupiditate voluptatum pariatur
-              nihil non commodi inventore debitis assumenda harum earum ab
-              necessitatibus ipsa? Possimus, accusantium.
+              Since our incept on, we've brought together globally respected editoria okto mom, nacine, and influence. From entertainment to luxury, our brands shape conversations that matter. We invest deeply in every file we own, у літу насе The focus, integrity and creative ambition.
             </p>
           </div>
         </div>

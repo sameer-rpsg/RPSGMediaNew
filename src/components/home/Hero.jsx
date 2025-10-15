@@ -12,6 +12,7 @@ const Hero = () => {
             const appHeight = window.innerHeight;
             document.documentElement.style.setProperty('--app-height', `${appHeight}px`);
             document.documentElement.style.setProperty('--screen-height', `${appHeight}px`);
+             ScrollTrigger.refresh();
           }
           
           // Call once on load
@@ -179,6 +180,7 @@ const Hero = () => {
           });
         },
       });
+      
     },[router.asPath]);
     
 

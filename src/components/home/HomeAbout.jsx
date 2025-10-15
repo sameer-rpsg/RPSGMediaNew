@@ -14,9 +14,9 @@ const HomeAbout = () => {
             <div>
               <div className="about_para">
                 <span>
-                  We build Iconic Media Brands That Shape Culture, Spark
-                  Conversations, And Drive Influence &mdash; Across
-                  Entertainment, Lifestyle, Luxury.
+                    We build Iconic Media Brands That Shape Culture, Spark
+                    Conversations, And Drive Influence &mdash; Across
+                    Entertainment, Lifestyle, Luxury.
                 </span>
                 {/* <BottomLineAnimation animatedText=" Entertainment " />,
                <BottomLineAnimation animatedText="&nbsp;Lifestyle " /> , 

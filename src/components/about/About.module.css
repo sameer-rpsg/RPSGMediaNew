@@ -9,7 +9,7 @@
 .manifesto_header {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 24px 0;
+    margin: 32px 0;
 }
 
 .manifesto_title {
