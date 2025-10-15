@@ -290,6 +290,11 @@
         -o-object-position: right;
         object-position: right;
       }
+@media (max-width: 767px) {
+    .card__wrapper{
+        padding: 1.6rem 1rem;
+    }
+}
 @media (min-width: 1024px) {
     .marquee__container {
         /* padding-bottom: 22rem; */

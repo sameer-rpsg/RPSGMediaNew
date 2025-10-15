@@ -248,6 +248,7 @@ body:not(.animation-ended) .home__hero .sentence {
   position: relative;
   height: 100vh;
   height: var(--app-height);
+  
 
 }
 
