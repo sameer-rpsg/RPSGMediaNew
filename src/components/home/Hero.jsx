@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -190,9 +190,8 @@ const Hero = () => {
     });
   }, [router.asPath]);
 
-
-// Force play programmatically
-// Sometimes Safari requires a JS call to .play():
+  // Force play programmatically
+  // Sometimes Safari requires a JS call to .play():
   useEffect(() => {
     const video = document.querySelector(".home__hero__video video");
 
@@ -211,18 +210,10 @@ const Hero = () => {
         <h1 className="home__hero__inner mb-7 mb-md-0">
           <div className="home__hero__line text-center text-md-start">
             <div className="sentence">
-              <font style={{ verticalAlign: "inherit" }}>DEFINING LUXURY,</font>
+              <font style={{ verticalAlign: "inherit" }}>Defining Luxury,</font>
             </div>
           </div>
           <div className="home__hero__line centerdivlinevideo">
-            {/* <div className="sentence"> */}
-            {/* <font style={{ verticalAlign: "inherit" }}>Infl&nbsp;</font> */}
-            {/* </div> */}
-            {/* <div className="sentence">
-              <font style={{ verticalAlign: "inherit" }}>the center&nbsp;</font>
-
-             
-            </div> */}
             <div
               className="home__hero__video"
               data-cursor="sound on"
@@ -241,9 +232,6 @@ const Hero = () => {
             <div className="sentence">
               <font style={{ verticalAlign: "inherit" }}>Influence,</font>
             </div>
-            {/* <div className="sentence">
-              <font style={{ verticalAlign: "inherit" }}>&nbsp; of</font>
-              </div> */}
           </div>
           <div className="home__hero__line btmlinetext">
             <div className="sentence">And Modern Media.</div>

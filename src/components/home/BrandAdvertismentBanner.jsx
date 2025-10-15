@@ -92,10 +92,10 @@ const BrandAdvertismentBanner = () => {
 
   return (
     <div className={styles.BrandAdvertismentBanner_container}>
-      <h1 className={styles.BrandAdvertismentBanner_heading}>
-        PREMIUM BRANDS ADVERTISE HERE. <br />
-        YOU SHOULD TOO.
-      </h1>
+      <h2 className={styles.BrandAdvertismentBanner_heading}>
+      Premium Brands Advertise Here. <br />
+      You Should Too.
+      </h2>
 
       <div className={`${styles.marquee__container} ${styles.drag}`}>
         <div className={styles.marquee_slider}>

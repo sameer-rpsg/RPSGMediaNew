@@ -1,17 +1,17 @@
 .BrandAdvertismentBanner_container {
     background-color: #000;
-    padding: 3rem 0;
+    padding: 4rem 0;
     color: #fff;
     text-align: left;
 }
 
 .BrandAdvertismentBanner_heading {
-    font-size: 2rem;
-    font-weight: 400;
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1.3;
+    font-family: var(--secondaryfontRegular);
     margin-bottom: 30px;
-    line-height: 1.4;
     padding: 0 3rem;
-    font-family: var(--secondaryfontMedium);
 }
 
 .BrandAdvertismentBanner_cardContainer {
@@ -35,11 +35,16 @@
         /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
 
     }
+    .BrandAdvertismentBanner_heading{
+        font-size: 3rem;
+        padding: 0 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
     .BrandAdvertismentBanner_heading {
-        font-size: 22px;
+        font-size: 2rem;
+        padding: 0 1rem;
     }
 
     .BrandAdvertismentBanner_card {
@@ -344,7 +349,7 @@
         font-weight: 300;
         letter-spacing: -0.02rem;
         line-height: 2rem;
-        padding: 1rem 1.5rem;
+        padding: 1rem 2rem;
     }
 
     .bottom {

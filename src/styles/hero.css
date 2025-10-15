@@ -78,6 +78,7 @@
   /* line-height: 1; */
   margin-bottom: 7rem !important;
   font-size: 6vw;
+  /* line-height: 1.1; */
 }
 
 @media (min-width: 760px) {
@@ -88,7 +89,7 @@
 @media (min-width: 992px) {
   .home__hero__inner {
     /* font-size: 8vw; */
-    font-size: 4vw;
+    font-size: 6vw;
   }
   .home__hero__line:first-child {
     margin-left: -0.5em;
@@ -119,7 +120,7 @@
     /* font-size: 12rem; */
   }
   .home__hero__line:first-child {
-    margin-left: -0.2em;
+    /* margin-left: 0; */
 }
 .home__hero__line:nth-child(3) {
         margin-left: 2.3em;
@@ -147,11 +148,11 @@ body:not(.animation-ended) .home__hero .sentence {
   text-align: center !important;
 }
 .sentence{
-    text-transform: uppercase;
+    text-transform: capitalize;
 
 }
 .sentence font{
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
  .text-md-start {
     text-align: left !important;
@@ -191,8 +192,8 @@ body:not(.animation-ended) .home__hero .sentence {
 
 @media (min-width: 1400px) {
   .home__hero__video {
-    height: 4rem;
-    width: 4rem;
+    height: 5rem;
+    width: 5rem;
   }
    .home__hero__line.centerdivlinevideo{
       margin-left: 3.3em;
