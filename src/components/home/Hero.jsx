@@ -234,7 +234,6 @@ const Hero = () => {
                 loop
                 playsInline
                 muted
-                preload="auto" // Ensure browser loads video
                 poster="../../../assets/rpsg_logoonly.png"
                 crossOrigin="anonymous"
               ></video>

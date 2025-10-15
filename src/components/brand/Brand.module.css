@@ -1,0 +1,28 @@
+.Brand_parallax_section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.parallax_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%; /* taller to allow movement */
+  /* background-image: url('your-image.jpg'); */
+  z-index: -1;
+  will-change: transform;
+}
+.parallax_bg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 4rem;
+  color: white;
+}

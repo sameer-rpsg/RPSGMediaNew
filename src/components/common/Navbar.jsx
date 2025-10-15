@@ -20,8 +20,8 @@ const Navbar = () => {
 
   const mainLinks = [
     { name: "ABOUT", href: "/about" },
-    { name: "BRANDS", href: "/gallery", insertMediaLinksAfter: true }, // 👈 marker
     { name: "ADVERTISING", href: "/advertising" },
+    { name: "BRANDS", href: "/brand", insertMediaLinksAfter: true }, // 👈 marker
     { name: "CAREER", href: "/newsroom" },
     { name: "CONTACT", href: "/contact" },
   ];
@@ -64,8 +64,8 @@ const Navbar = () => {
 
   const allowed = [
     "ABOUT",
-    "BRANDS",
     "ADVERTISING",
+    "BRANDS",
     "CAREER",
     "CONTACT",
   ];

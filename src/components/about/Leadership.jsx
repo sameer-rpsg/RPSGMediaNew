@@ -21,38 +21,34 @@ const leaders = [
   {
     name: "Rohit Tiwari",
     role: "Head of Web Design",
-    image: "https://strapi-bus-eng-prod.s3.us-east-1.amazonaws.com/unnamed_2_3deba853b2_0a5b91abf2.jpg",
+    image: "https://images.prismic.io/rejouice-2024/Z0dOD5bqstJ971U2_jack.jpg?auto=format,compress&w=696&h=868&fm=avif",
   },
   {
     name: "Rohit Tiwari",
     role: "Head of Web Design",
-    image: "https://strapi-bus-eng-prod.s3.us-east-1.amazonaws.com/unnamed_2_3deba853b2_0a5b91abf2.jpg",
+    image: "https://images.prismic.io/rejouice-2024/Z0dODpbqstJ971U1_gabriel.jpg?auto=format,compress&w=696&h=869&fm=avif",
   },
   {
     name: "Rohit Tiwari",
     role: "Head of Web Design",
-    image: "https://strapi-bus-eng-prod.s3.us-east-1.amazonaws.com/unnamed_2_3deba853b2_0a5b91abf2.jpg",
+    image: "https://images.prismic.io/rejouice-2024/Z0dOEZbqstJ971U4_jeffrey.jpg?auto=format,compress&w=696&h=868&fm=avif",
   },
   {
     name: "Rohit Tiwari",
     role: "Head of Web Design",
-    image: "https://strapi-bus-eng-prod.s3.us-east-1.amazonaws.com/unnamed_2_3deba853b2_0a5b91abf2.jpg",
+    image: "https://images.prismic.io/rejouice-2024/Z0dODZbqstJ971U0_clement.jpg?auto=format,compress&w=696&h=869&fm=avif",
   },
   {
     name: "Rohit Tiwari",
     role: "Head of Web Design",
-    image: "https://strapi-bus-eng-prod.s3.us-east-1.amazonaws.com/unnamed_2_3deba853b2_0a5b91abf2.jpg",
+    image: "https://images.prismic.io/rejouice-2024/Z0dOEJbqstJ971U3_jeanmichel.jpg?auto=format,compress&w=696&h=868&fm=avif",
   },
   {
     name: "Rohit Tiwari",
     role: "Head of Web Design",
-    image: "https://strapi-bus-eng-prod.s3.us-east-1.amazonaws.com/unnamed_2_3deba853b2_0a5b91abf2.jpg",
+    image: "https://images.prismic.io/rejouice-2024/Z2GNNpbqstJ98mqU_6384a19b-fa1c-4ad1-aae0-e29e127ebeef_san-diego-office.jpg.jpg?auto=format,compress&w=696&h=868&fm=avif",
   },
-  {
-    name: "Rohit Tiwari",
-    role: "Head of Web Design",
-    image: "https://strapi-bus-eng-prod.s3.us-east-1.amazonaws.com/unnamed_2_3deba853b2_0a5b91abf2.jpg",
-  },
+  
 ];
 
 const Leadership = () => {
@@ -91,7 +87,7 @@ const Leadership = () => {
               <Image
                 width={1000}
                 height={1000}
-                src="/assets/manifestposter.jpg"
+                src="/assets/Avarna_Jain_Chairperson_RPSG_Lifestyle_Media_.avif"
                 alt={`${featured.name} - ${featured.role}`}
                 loading="lazy"
               />

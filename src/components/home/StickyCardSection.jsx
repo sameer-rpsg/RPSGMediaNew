@@ -11,6 +11,7 @@ import gsap from "gsap";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import styles from "@/components/home/Home.module.css"
 gsap.registerPlugin(ScrollTrigger);
 
 const StickyCardSection = () => {
@@ -79,7 +80,8 @@ const StickyCardSection = () => {
   const stickyContainer = useRef(null);
   useGSAP(
     () => {
-      const stickyCards = document.querySelectorAll(".hollywood-section");
+    if (window.innerWidth < 1200) return;
+      const stickyCards = document.querySelectorAll(`.${styles.hollywood_section}`);
       stickyCards.forEach((card, index) => {
         if (index < stickyCards.length - 1) {
           ScrollTrigger.create({
@@ -118,22 +120,22 @@ const StickyCardSection = () => {
     { scope: stickyContainer }
   );
   return (
-    <div className="Sticky_card_wrapper" ref={stickyContainer}>
+    <div className={styles.Sticky_card_wrapper} ref={stickyContainer}>
       {StickyCardsData.map((card) => (
-        <section className={`hollywood-section ${card.bgColorclass || ""}`} key={card.id}>
-          {/* Left side - Magazine cover */}
-          <div className="hollywood-left">
+        <section className={`${styles.hollywood_section} ${card.bgColorclass || ""}`} key={card.id}>
+          <div className={styles.hollywood_section_innerWrapper}>
+          <div className={styles.hollywood_left}>
             <img
               src={card.PosterImgUrl}
               alt="Hollywood Reporter India"
-              className="magazine-cover"
+              className={styles.magazine_cover}
             />
           </div>
 
           {/* Right side - Text content */}
-          <div className="hollywood-right">
+          <div className={styles.hollywood_right}>
             <div>
-            <h2 className="card_logoImg">
+            <h2 className={styles.card_logoImg}>
               <Image
                 width={1000}
                 height={1000}
@@ -144,15 +146,15 @@ const StickyCardSection = () => {
 
             {/* Three paragraphs */}
             {card.paragraphs.map((para, idx) => (
-              <p className="text" key={idx}>
+              <p className={styles.text} key={idx}>
                 {para}
               </p>
             ))}
 
             {/* Learn more + dots */}
-            <div className="card_social_wrapper">
+            <div className={styles.card_social_wrapper}>
               <TextAnimate textAnim="Learn More" />
-              <div className="dots">
+              <div className={styles.dots}>
                 <span>
                 <FaInstagram />
                 </span>
@@ -166,10 +168,11 @@ const StickyCardSection = () => {
             </div>
             </div>
             {/* Links */}
-            <div className="links">
+            <div className={styles.links}>
               <TextAnimate textAnim={card.website} />
               <TextAnimate textAnim={card.mediaKit} />
             </div>
+          </div>
           </div>
         </section>
       ))}

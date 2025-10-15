@@ -94,6 +94,19 @@ audio, canvas {
     display: inline-block;
     max-width: 100%;
 }
+.bgwhite {
+    background-color: #fff !important;
+}
+
+.manifestbgColor {
+    background-color: #faf7f3 !important;
+}
+
+.esquirebgColor {
+    background-color: #ec3c36 !important;
+
+}
+
 /* @media (prefers-color-scheme: light) {
   html {
     color-scheme: light;
@@ -291,10 +304,11 @@ audio, canvas {
     height: 550px;
   } */
    .card_about_content{
-    max-width: 600px;
+    max-width: 900px;
+    padding: 0 2rem;
    }
   .about_intro_desc{
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 @media only screen and (max-width:767px){
@@ -307,7 +321,8 @@ audio, canvas {
     height: 400px;
   } */
    .card_about_content{
-    max-width: 500px;
+    max-width: 900px;
+    padding: 0 2rem;
    }
   .about_intro_desc{
     font-size: 1.25rem;

@@ -61,8 +61,8 @@ const AnimatedLink = ({ href = "/about", text = "Get to know us", text2 = "About
     const onEnter = () => {
       if (tl) tl.kill();
       tl = gsap.timeline({ defaults: { ease } });
-      tl.to(chars1, { yPercent: -110, stagger: 0.02, duration: 0.9 }, 0)
-        .to(chars2, { yPercent: 0, stagger: 0.02, duration: 0.9 }, 0.15)
+      tl.to(chars1, { yPercent: -110, stagger: 0.02, duration: 0.5 }, 0)
+        .to(chars2, { yPercent: 0, stagger: 0.02, duration: 0.5 }, 0.10)
         .to(bar, { scaleX: parseFloat(link.dataset.ratio || 1), duration: 1.4 }, 0);
     };
 
@@ -70,8 +70,8 @@ const AnimatedLink = ({ href = "/about", text = "Get to know us", text2 = "About
     const onLeave = () => {
       if (tl) tl.kill();
       tl = gsap.timeline({ defaults: { ease } });
-      tl.to(chars2, { yPercent: 110, stagger: 0.02, duration: 0.9 }, 0)
-        .to(chars1, { yPercent: 0, stagger: 0.02, duration: 0.9 }, 0.15)
+      tl.to(chars2, { yPercent: 110, stagger: 0.02, duration: 0.5 }, 0)
+        .to(chars1, { yPercent: 0, stagger: 0.02, duration: 0.5 }, 0.10)
         .to(bar, { scaleX: 1, duration: 1.4 }, 0);
     };
 

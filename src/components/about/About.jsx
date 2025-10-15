@@ -663,7 +663,7 @@ const About = () => {
             <h2 className="about_title text_1reveal">Be real</h2>
             <h2 className="about_title text_2reveal">Be relevant</h2>
             <h2 className="about_title text_3reveal">
-              BeConfluential <sup>TM</sup>
+              Be Confluential
             </h2>
           </div>
           {/* </div> */}

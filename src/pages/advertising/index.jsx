@@ -12,7 +12,7 @@ const index = () => {
     gsap.from(".advertising_main_wrapper", {
       opacity: 0,
       duration: 1,
-      delay: 3,
+      // delay: 3,
       ease: "power4.in",
     });
   });

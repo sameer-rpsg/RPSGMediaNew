@@ -143,7 +143,19 @@
     padding-left: 2rem;
   }
 }
+@media screen and (max-width: 1024px) {
+.linksCntr ul li{
+  padding-right: 2rem;
+}
+.logoCntr{
+  width: 100px;
+  height: 50px;
+}
+}
 @media screen and (max-width: 768px) {
+  .navbar_wrapper2{
+    padding: 2rem 1rem;
+  }
   .logoCntr {
     width: 90px;
     height: 49px;
