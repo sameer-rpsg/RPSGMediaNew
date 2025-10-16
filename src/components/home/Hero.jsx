@@ -220,7 +220,7 @@ const Hero = () => {
               data-cursor-click="sound off"
             >
               <video
-                src="https://strapi-bus-eng-prod.s3.amazonaws.com/CN_Sizz_Header_Video_v2_c0c87772db.mp4"
+                src="/assets/videos/homeherovideo.mp4"
                 autoPlay
                 loop
                 playsInline
