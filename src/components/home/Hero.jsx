@@ -42,8 +42,10 @@ const Hero = () => {
     });
 
     // Animating the sentences in .home__hero__line
-    tl_enterAnimation.to(
-      ".homeheroline .sen",
+    tl_enterAnimation.fromTo(
+      ".homeheroline .sen",{
+        y:100
+      },
       {
         y: 0,
         stagger: 0.09,
@@ -256,7 +258,7 @@ const Hero = () => {
               <div className="sen">Defining</div>
             </div>
             {/* <div className="homeheroline"> */}
-            <div className="homeheroline">
+            {/* <div className="homeheroline"> */}
             <div
               className="home__hero__video"
               data-cursor="sound on"
@@ -272,7 +274,7 @@ const Hero = () => {
                 crossOrigin="anonymous"
               ></video>
             </div>
-            </div>
+            {/* </div> */}
             <div class="homeheroline">
               <div className="sen">And</div>
             </div>
