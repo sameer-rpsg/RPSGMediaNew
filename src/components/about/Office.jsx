@@ -3,6 +3,7 @@ import styles from "@/components/about/About.module.css";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 const Office = () => {
   useEffect(() => {
@@ -49,15 +50,15 @@ const Office = () => {
           <h2
             className={`${styles.studioName} ${styles.gCol} ${styles.xxl18} ${styles.xs24} ${styles.midstatement}`}
           >
-            Delhi
+            Mumbai
           </h2>
         </div>
 
         <div
           className={`${styles.maskedImg} ${styles.mbgridMargin} ${styles.mc}`}
         >
-          <img
-            alt="Bürostudios Porto #1"
+          <Image width={1000} height={1000}
+            alt=""
             className={styles.photo}
             src="/assets/officeimages/img6.png"
           />
@@ -67,20 +68,20 @@ const Office = () => {
           <div
             className={`${styles.info} ${styles.gCol} ${styles.xxl12} ${styles.xs19} ${styles.xsOffset5}`}
           >
-            <a
+            <Link
               className={`${styles.location} ${styles.whitespacePreline}`}
-              href=""
+              href="#"
               target="_blank"
             >
-              Rua de Alfredo Cunha 133 3º Frt 4450-023 Matosinhos Portugal
-            </a>
-            <a
+              301, HSBC Building, Pali Road, Bandra West, Mumbai - 400050
+            </Link>
+            <Link
               className={styles.contact}
               href="mailto:info@rpsgmedia.com"
               target="_blank"
             >
               info@rpsgmedia.com
-            </a>
+            </Link>
           </div>
 
           <div
@@ -89,8 +90,8 @@ const Office = () => {
             <div
               className={`${styles.maskedImg} ${styles.mbgridMargin} ${styles.mc}`}
             >
-              <img
-                alt="Bürostudios Porto #2"
+              <Image width={1000} height={1000}
+                alt=""
                 className={styles.photo}
                 src="/assets/officeimages/img7.png"
               />
@@ -98,8 +99,8 @@ const Office = () => {
             <div
               className={`${styles.maskedImg} ${styles.mbgridMargin} ${styles.mc}`}
             >
-              <img
-                alt="Bürostudios Porto #3"
+              <Image width={1000} height={1000}
+                alt=""
                 className={styles.photo}
                 src="/assets/officeimages/img2.jpg"
               />
@@ -119,14 +120,14 @@ const Office = () => {
           <h2
             className={`${styles.studioName} ${styles.gCol} ${styles.xxl18} ${styles.xs24} ${styles.midstatement}`}
           >
-            Mumbai
+            Delhi
           </h2>
         </div>
 
         <div
           className={`${styles.maskedImg} ${styles.mbgridMargin} ${styles.mc}`}
         >
-          <img
+          <Image width={1000} height={1000}
             alt=""
             className={styles.photo}
             src="/assets/officeimages/img4.png"
@@ -161,8 +162,8 @@ const Office = () => {
             <div
               className={`${styles.maskedImg} ${styles.mbgridMargin} ${styles.mc}`}
             >
-              <img
-                alt="Bürostudios Coimbra #2"
+              <Image width={1000} height={1000}
+                alt=""
                 className={styles.photo}
                 src="/assets/officeimages/img5.png"
               />
@@ -170,8 +171,8 @@ const Office = () => {
             <div
               className={`${styles.maskedImg} ${styles.mbgridMargin} ${styles.mc}`}
             >
-              <img
-                alt="Bürostudios Coimbra #3"
+              <Image width={1000} height={1000}
+                alt=""
                 className={styles.photo}
                 src="/assets/officeimages/img1.jpg"
               />
@@ -179,8 +180,8 @@ const Office = () => {
             <div
               className={`${styles.maskedImg} ${styles.mbgridMargin} ${styles.mc}`}
             >
-              <img
-                alt="Bürostudios Coimbra #4"
+              <Image width={1000} height={1000}
+                alt=""
                 className={styles.photo}
                 src="/assets/officeimages/img3.jpg"
               />

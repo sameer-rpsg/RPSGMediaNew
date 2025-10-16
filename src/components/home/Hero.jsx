@@ -37,17 +37,24 @@ const Hero = () => {
       onComplete: function () {
         setTimeout(() => {
           enterAnimationEnded = true;
-        }, 1000); // Mark animation as ended after a slight delay
+        }, 100); // Mark animation as ended after a slight delay
       },
     });
 
     // Animating the sentences in .home__hero__line
-    tl_enterAnimation.to(".home__hero__line .sentence", {
-      y: 0,
-      stagger: 0.09,
-      duration: 1.6,
-      ease: "expo.out",
-    });
+    tl_enterAnimation.fromTo(
+      ".sen",
+      {
+        opacity: 0,
+      },
+      {
+        y: 0,
+        stagger: 0.09,
+        duration: 1.6,
+        opacity: 1,
+        ease: "expo.out",
+      }
+    );
 
     // Animating .home__hero__metas
     tl_enterAnimation.to(".home__hero__metas", {
@@ -76,7 +83,16 @@ const Hero = () => {
       end: "bottom bottom",
       scrub: true,
     });
-
+    // gsap.set(t,{
+    //   opacity:0
+    // })
+    gsap.to(
+      t,
+      {
+        opacity: 1,
+        delay: 1,
+      }
+    );
     const a = function () {
       const t = r.getBoundingClientRect();
       const i = n.getBoundingClientRect();
@@ -207,7 +223,7 @@ const Hero = () => {
   return (
     <>
       <section className="home__hero container-fluid">
-        <h1 className="home__hero__inner mb-7 mb-md-0">
+        {/* <h1 className="home__hero__inner mb-7 mb-md-0">
           <div className="home__hero__line text-center text-md-start">
             <div className="sentence">
               <font style={{ verticalAlign: "inherit" }}>Defining Luxury,</font>
@@ -236,7 +252,47 @@ const Hero = () => {
           <div className="home__hero__line btmlinetext">
             <div className="sentence">And Modern Media.</div>
           </div>
-        </h1>
+        </h1> */}
+        <div className="home__hero__inner mb-7 mb-md-0">
+          <div class="p1">
+            <div class="homeheroline">
+              <div className="sen">Defining</div>
+            </div>
+            {/* <div className="homeheroline"> */}
+            <div className="homeheroline">
+            <div
+              className="home__hero__video"
+              data-cursor="sound on"
+              data-cursor-click="sound off"
+            >
+              <video
+                src="/assets/videos/homeherovideo.mp4"
+                autoPlay
+                loop
+                playsInline
+                muted
+                // poster="../../../assets/rpsg_logoonly.png"
+                crossOrigin="anonymous"
+              ></video>
+            </div>
+            </div>
+            <div class="homeheroline">
+              <div className="sen">And</div>
+            </div>
+            {/* </div> */}
+          </div>
+          <div class="p2">
+            <div class="homeheroline">
+              <div className="sen">Luxury,</div>
+            </div>
+            <div class="homeheroline">
+              <div className="sen">Influence,</div>
+            </div>
+            <div class="homeheroline">
+              <div className="sen">Modern Media.</div>
+            </div>
+          </div>
+        </div>
         <div className="home__hero__metas container-fluid"></div>
       </section>
 

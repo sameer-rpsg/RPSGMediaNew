@@ -145,7 +145,7 @@ img[draggable="false"] {
   max-width: 50%;
 }
 .our_client_logo:hover .card__image img {
-  /* opacity: 1; */
+  opacity: 1;
 }
 @media only screen and (min-width: 640px) {
   .advertising_home-hero {
@@ -179,10 +179,13 @@ img[draggable="false"] {
     grid-template-columns: repeat(3, 1fr);
   }
   .Advertising_cntr{
-    padding: 1rem 1rem;
+    padding: 1rem 2rem;
   }
 }
 @media only screen and (min-width: 1024px) {
+  .Advertising_cntr{
+    padding: 1rem 3rem;
+  }
     .clients-tile{
       grid-template-columns: repeat(4, 1fr);
     }
@@ -233,6 +236,9 @@ img[draggable="false"] {
   max-width: calc(
     (var(--grid-column-width) * 11) + (var(--grid-gutter-width) * 10)
   );
+  font-family: var(--secondaryfontRegular);
+  font-weight: 600;
+  font-size: 4rem;
 }
 .recirculation {
   position: relative;
@@ -417,11 +423,16 @@ svg:not(:root) {
 .recirculation__arrows {
   display: flex;
 }
+@media only screen and (max-width: 479px){
+.statement__heading{
+  font-size: 2rem;
+}
+}
 @media only screen and (min-width: 375px) {
-  .text--display {
+  /* .text--display {
     font-size: calc(2.9837398373983737rem + 4.336043360433604vw);
     font-size: clamp(64px, 2.9837398373983737rem + 4.336043360433604vw, 80px);
-  }
+  } */
   .headline__title {
     max-width: calc(
       (var(--grid-column-width) * 10) + (var(--grid-gutter-width) * 9)
@@ -431,7 +442,7 @@ svg:not(:root) {
     font-size: 26px;
   }
 }
-@media only screen and (min-width: 744px) {
+@media only screen and (min-width: 768px) {
   .modern-solutions {
     display: block;
   }
@@ -439,15 +450,17 @@ svg:not(:root) {
     max-width: calc(
       (var(--grid-column-width) * 9) + (var(--grid-gutter-width) * 8)
     );
+    font-size: 3rem;
+    width: 35rem;
   }
-  .text--display {
+  /* .text--display {
     font-size: calc(-0.0543478260869561rem + 10.869565217391305vw);
     font-size: clamp(
       80px,
       -0.0543478260869561rem + 10.869565217391305vw,
       110px
     );
-  }
+  } */
   .statement__heading {
     max-width: calc(
       (var(--grid-column-width) * 9) + (var(--grid-gutter-width) * 8)
@@ -474,15 +487,15 @@ svg:not(:root) {
   }
 }
 
-@media only screen and (min-width: 1020px) {
-  .text--display {
+@media only screen and (min-width: 1024px) {
+  /* .text--display {
     font-size: calc(-0.48076923076923084rem + 11.538461538461538vw);
     font-size: clamp(
       110px,
       -0.48076923076923084rem + 11.538461538461538vw,
       140px
     );
-  }
+  } */
   .recirculation {
     padding: 100px 0 84px;
   }
@@ -515,14 +528,16 @@ svg:not(:root) {
     right: var(--grid-gutter-width);
     top: -86px;
   }
- 
+ .statement__heading{
+  font-size: 4rem;
+ }
 }
 
 @media only screen and (min-width: 1280px) {
-  .text--display {
+  /* .text--display {
     font-size: calc(-1.25rem + 12.5vw);
     font-size: clamp(140px, -1.25rem + 12.5vw, 160px);
-  }
+  } */
   .recirculation {
     padding: 120px 0 104px;
   }
@@ -548,10 +563,10 @@ svg:not(:root) {
 }
 
 @media only screen and (min-width: 1440px) {
-  .text--display {
+  /* .text--display {
     font-size: calc(0.625rem + 10.416666666666668vw);
-    font-size: clamp(160px, 0.625rem + 10.416666666666668vw, 210px);
-  }
+    font-size: clamp(4rem, 0.625rem + 10.416666666666668vw, 210px);
+  } */
   .text--subtitle1 {
     font-size: 40px;
   }
@@ -694,12 +709,14 @@ svg:not(:root) {
   font-size: 1.3rem;
   letter-spacing: 0.05rem;
 }
-@media only screen and (min-width: 375px) {
+@media only screen and (max-width: 479px){
   .text--subtitle1 {
-    font-size: 26px;
+    font-size: 2rem;
   }
 }
-@media only screen and (min-width: 744px) {
+/* @media only screen and (min-width: 375px) {
+} */
+@media only screen and (min-width: 768px) {
   .responsive-support__title {
     display: block;
   }
@@ -709,6 +726,9 @@ svg:not(:root) {
   }
   .responsive-support__cta--desktop {
     display: block;
+  }
+  .text--subtitle1 {
+    font-size: 2.5rem;
   }
   .text--subtitle2 {
     font-size: 24px;
@@ -723,9 +743,9 @@ svg:not(:root) {
     width: 80vw;
   }
 }
-@media only screen and (min-width: 1020px) {
+@media only screen and (min-width: 1024px) {
   .text--subtitle1 {
-    font-size: 32px;
+    font-size: 3rem;
   }
   .text--subtitle2 {
     font-size: 26px;
@@ -746,16 +766,16 @@ svg:not(:root) {
     padding: 120px 0;
   }
   .text--subtitle1 {
-    font-size: 36px;
+    font-size: 2rem;
   }
   .support__links {
     padding-top: 80px;
   }
   .support__headline_para {
     padding: 0 var(--grid-gutter-width);
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top: 1rem;
-    width: 70vw;
+    width: 65vw;
   }
 }
 

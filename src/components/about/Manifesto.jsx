@@ -16,12 +16,13 @@ const Manifesto = () => {
   ];
 
  const textRefs = useRef([]);
+ const numberRefs = useRef([]);
   const rafId = useRef(null);
 
   useEffect(() => {
     // ensure refs array length is correct
     textRefs.current = textRefs.current.slice(0, manifestoData.length);
-
+ numberRefs.current = numberRefs.current.slice(0, manifestoData.length);
     const checkCenter = () => {
       const centerY = window.innerHeight / 2;
       let closestIndex = -1;
@@ -40,12 +41,15 @@ const Manifesto = () => {
 
       // toggle classes: only closest gets active
       textRefs.current.forEach((el, i) => {
-        if (!el) return;
-        if (i === closestIndex && minDist <= 80) {
-          // within 80px of center — treat as centered
-          el.classList.add(styles.active);
+        const numberEl = numberRefs.current[i];
+        const isActive = i === closestIndex && minDist <= 80;
+
+        if (isActive) {
+          el?.classList.add(styles.active);
+          numberEl?.classList.add(styles.active);
         } else {
-          el.classList.remove(styles.active);
+          el?.classList.remove(styles.active);
+          numberEl?.classList.remove(styles.active);
         }
       });
     };
@@ -103,8 +107,9 @@ const Manifesto = () => {
               />
             </div>
             <h3 className={styles.g_row}>
-              <span className={`${styles.g_col} ${styles.h2}`}>
+              <span className={`${styles.g_col} ${styles.h2}`}  ref={(el) => (numberRefs.current[index] = el)}>
                 {item.id.toString().padStart(2, "")}
+                
               </span>
               <span
                  ref={(el) => (textRefs.current[index] = el)}

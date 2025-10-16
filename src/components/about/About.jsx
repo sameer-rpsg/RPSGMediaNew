@@ -175,7 +175,7 @@ const About = () => {
         {
           height: "auto", // animate to full content height
           // height: introDesc.scrollHeight, // animate to full content height
-          duration: 0.3,
+          duration: .8,
           ease: "linear",
         },
         "b"
@@ -278,7 +278,7 @@ const About = () => {
         ease: "power2.inOut",
       });
     });
-  });
+  },);
 
   return (
     <div className="layered-container" ref={containerRef}>

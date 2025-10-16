@@ -105,6 +105,9 @@
     max-width: 16.6666666667%;
     font-weight: 300;
     margin-left: 50%;
+        opacity: .4;
+    transition: opacity 0.5s ease, color 0.5s ease;
+
 }
 
 .p_small {
@@ -122,6 +125,9 @@
 }
 
 .p_small.active {
+    opacity: 1;
+}
+.h2.active {
     opacity: 1;
 }
 
@@ -156,8 +162,8 @@
     }
 
     .manifesto_title {
-        margin-bottom: 12px;
-        font-size: 2rem;
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
     }
 
     .manifesto_para {
@@ -320,12 +326,13 @@
     .leadershipSection {
         padding: 4rem 2rem;
     }
+    .leadershipSection_heading {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
 }
 
 @media (max-width: 600px) {
-    .leadershipSection_heading {
-        font-size: 1.6rem;
-    }
 
     .grid {
         grid-template-columns: repeat(2, 1fr);
@@ -426,8 +433,13 @@
 }
 
 .studioShowcase .photo {
+    /* width: 100%;
+    margin-bottom: var(--grid-margin); */
     width: 100%;
     margin-bottom: var(--grid-margin);
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .studioShowcase .info {
@@ -444,10 +456,14 @@
     flex: 0 0 50%;
     max-width: 50%;
 }
+
 .xxl6 {
-    flex: 0 0 25%;
-    max-width: 25%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    font-size: 4rem;
+    font-family: var(--secondaryfontRegular);
 }
+
 [data-hitarea]:after {
     content: "";
     position: absolute;
@@ -466,36 +482,36 @@
 }
 
 .xxl18 {
-    flex: 0 0 75%;
-    max-width: 75%;
+    flex: 0 0 50%;
+    max-width: 50%;
 }
 
 .midstatement {
-    font-size:
-        /*lrs=160*/
-        clamp(90px, 69.174px + 100vw * .0534, 160px);
+    /* font-size:
+        clamp(90px, 69.174px + 100vw * .0534, 160px); */
+    font-size: 4rem;
     line-height: .9;
     letter-spacing: -.01em;
     ---letter-spacing: -0.07em;
 }
-.studioShowcase .item_divider
- {
+
+.studioShowcase .item_divider {
     margin: clamp(48px, 44.412px + 100vw * .0092, 60px) auto;
 }
+
 @media only screen and (max-width: 1023px) {
     .studioShowcase .info {
         flex-direction: column;
     }
-    .studioShowcase{
-            padding: 0 1rem;
+
+    .studioShowcase {
+        padding: 0 1rem;
     }
-        .xs24 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
+
+    
 }
 
-@media only screen and (max-width: 743px) {
+@media only screen and (max-width: 767px) {
     .studioShowcase .info {
         margin-top: var(--grid-margin);
         order: 2;
@@ -508,6 +524,17 @@
     .xs19 {
         flex: 0 0 79.1666666667%;
         max-width: 79.1666666667%;
+    }
+    .xs24 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .xxl6{
+        font-size: 2.5rem;
+    }
+    .midstatement{
+        margin-top: 1rem;
+        font-size: 2.5rem;
     }
 }
 
