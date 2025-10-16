@@ -12,57 +12,23 @@
   background-color: var(--background);
   background: linear-gradient(to right, #000, #6b0079);
 }
-.home__hero__line:first-child{
-    margin-left: -0.7em;
-}
+
 .btmlinetext{
 
 }
-@media (max-width: 767px){
-.home__hero__line.centerdivlinevideo{
-    margin-left: 3.5em;
-}
-}
-@media (min-width: 760px) {
-  .home__hero__line:first-child {
-    /* margin-left: 1.69em; */
-    /* margin-left: 0.3em; */
-  }
-}
 
-.home__hero__line:nth-child(3) {
-  /* margin-left: 1.27em; */
-  margin-left: 1.8em;
-}
 
-@media (min-width: 760px) {
-  .home__hero__line:nth-child(3) {
-    /* margin-left: 1.81em; */
-    /* margin-left: 2.9em; */
-  }
-}
-
-.home__hero__line:nth-child(4) {
-  /* margin-left: 1.27em; */
-}
-
-@media (min-width: 760px) {
-  .home__hero__line:nth-child(4) {
-    /* margin-left: 1.83em; */
-  }
-}
-
-.home__hero__line:not(:first-child) {
+/* .homeheroline:not(:first-child) {
   margin-top: 0.07em;
-}
+} */
 
-.home__hero__line .small,
-.home__hero__line small {
+.homeheroline .small,
+.homeheroline small {
   font-size: 0.3em;
   letter-spacing: 0.008em;
 }
 
-.home__hero__line sup {
+.homeheroline sup {
   line-height: 0;
 }
 .home__hero__inner {
@@ -113,7 +79,7 @@
   } */
 }
 
-body:not(.animation-ended) .home__hero .home__hero__line {
+body:not(.animation-ended) .home__hero .homeheroline {
   -webkit-clip-path: polygon(0 0, 125% 0, 125% 125%, 0 125%);
   clip-path: polygon(0 0, 125% 0, 125% 125%, 0 125%);
 }
@@ -151,29 +117,12 @@ body:not(.animation-ended) .home__hero .sen {
  .text-md-start {
     text-align: left !important;
   }
-  /* .home__hero__line.centerdivlinevideo {
-  display: flex;
-  align-items: center;
-  margin-left: 2.8em;
-} */
-/* .home__hero__line.centerdivlinevideo .sentence{
-    margin-left: 0.3em;
-} */
+
  .homeheroline{
-    /* overflow: hidden; */
     position: relative;
  }
 
 @media (min-width: 768px) {
-  .home__hero__video {
-    height: 4rem;
-    /* width: 15.9722222222vw; */
-    width: 4rem;
-    /* transform: none; */
-  }
-  /* .text-md-start {
-    text-align: left !important;
-  } */
     .p1{
         line-height: 1.3;
     }
@@ -211,9 +160,6 @@ body:not(.animation-ended) .home__hero .sen {
     height: 3.5rem;
     width: 3.5rem;
   }
-   .home__hero__line.centerdivlinevideo{
-      margin-left: 3.3em;
-   }
 }
 @media (min-width: 1660px){
 .home__hero__video {
@@ -241,9 +187,7 @@ body:not(.animation-ended) .home__hero .sen {
 .p2{
     line-height: 1.3;
 }
-/* .home__hero__line:first-child{
-    margin-left: -0.5em;
-} */
+
 }
 .home__hero__video.is-finished {
   cursor: none;
