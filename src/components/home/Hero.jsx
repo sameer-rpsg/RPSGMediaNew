@@ -37,16 +37,13 @@ const Hero = () => {
       onComplete: function () {
         setTimeout(() => {
           enterAnimationEnded = true;
-        }, 100); // Mark animation as ended after a slight delay
+        }, 1000); // Mark animation as ended after a slight delay
       },
     });
 
     // Animating the sentences in .home__hero__line
-    tl_enterAnimation.fromTo(
-      ".sen",
-      {
-        opacity: 0,
-      },
+    tl_enterAnimation.to(
+      ".homeheroline .sen",
       {
         y: 0,
         stagger: 0.09,

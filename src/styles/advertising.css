@@ -82,7 +82,7 @@
   grid-template-columns: repeat(1, 1fr);
   /* grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));; //use this instead to create responsive columns */
   /* grid-gap: 0.5rem; */
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   margin: 2rem auto;
   /* grid-template-columns: auto auto; */
   /* gap: 10px; */
