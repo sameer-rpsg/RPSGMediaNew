@@ -21,7 +21,7 @@ const Navbar = () => {
   const mainLinks = [
     { name: "ABOUT", href: "/about" },
     { name: "ADVERTISING", href: "/advertising" },
-    { name: "BRANDS", href: "/brand", insertMediaLinksAfter: true }, // 👈 marker
+    { name: "BRANDS", href: "/brands", insertMediaLinksAfter: true }, // 👈 marker
     { name: "NEWSROOM", href: "/newsroom" },
     { name: "CONTACT", href: "/contact" },
   ];

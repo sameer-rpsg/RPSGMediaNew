@@ -44,7 +44,7 @@ const Hero = () => {
     // Animating the sentences in .home__hero__line
     tl_enterAnimation.fromTo(
       ".homeheroline .sen",{
-        y:100
+        y:120
       },
       {
         y: 0,

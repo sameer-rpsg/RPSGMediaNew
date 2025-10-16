@@ -34,8 +34,8 @@
   /* line-height: 1; */
   /* margin-bottom: 7rem !important; */
   font-size: 6vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  /* grid-template-columns: 1fr 1fr; */
   gap: 1rem;
   align-items: center;
   /* line-height: 0.8; */
@@ -65,7 +65,7 @@
   .home__hero__inner {
     margin-bottom: 0 !important;
     gap: 2rem;
-    margin-right: 8vw;
+    /* margin-right: 8vw; */
   }
 }
 
