@@ -5,6 +5,7 @@ import "@/styles/globals.css";
 import "@/styles/hero.css"
 import "@/styles/home.css"
 import "@/styles/advertising.css"
+import "@/styles/newsroom.css"
 
 export default function App({ Component, pageProps }) {
 

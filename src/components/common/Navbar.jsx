@@ -22,7 +22,7 @@ const Navbar = () => {
     { name: "ABOUT", href: "/about" },
     { name: "ADVERTISING", href: "/advertising" },
     { name: "BRANDS", href: "/brand", insertMediaLinksAfter: true }, // 👈 marker
-    { name: "CAREER", href: "/newsroom" },
+    { name: "NEWSROOM", href: "/newsroom" },
     { name: "CONTACT", href: "/contact" },
   ];
 
@@ -66,7 +66,7 @@ const Navbar = () => {
     "ABOUT",
     "ADVERTISING",
     "BRANDS",
-    "CAREER",
+    "NEWSROOM",
     "CONTACT",
   ];
   const openSidebar = () => {
