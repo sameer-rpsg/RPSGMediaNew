@@ -27,7 +27,7 @@ const NewsLandingPage = () => {
           </picture>
           <div className="news-landing-page_overlay">
             <div className="news-landing-page_content">
-              <p className="news-landing-page_content_para">DEPT®/Insights </p>
+              {/* <p className="news-landing-page_content_para">DEPT®/Insights </p> */}
               <h3 className="typography">
                 Keep up-to-speed with all the latest trends in digital. Check
                 out{" "}

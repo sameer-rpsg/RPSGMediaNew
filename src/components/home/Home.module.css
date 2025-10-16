@@ -9,7 +9,9 @@
     font-size: 4rem;
     font-weight: 600;
     line-height: 1.3;
-    font-family: var(--secondaryfontRegular);
+    /* font-family: var(--secondaryfontRegular); */
+  font-family: var(--secondaryfontBold);
+
     margin-bottom: 30px;
     padding: 0 3rem;
 }
@@ -63,7 +65,7 @@
 @media (max-width: 479px) {
     .BrandAdvertismentBanner_heading {
         padding: 0 1rem;
-        font-size: 20px;
+        font-size: 2rem;
     }
 
     .BrandAdvertismentBanner_card {
@@ -457,9 +459,9 @@
 
 .card_logoImg img {
     filter: brightness(.1);
-    object-fit: contain;
+    object-fit: cover;
     object-position: left;
-    width: 210px;
+    width: 200px;
     height: 100%;
     margin-bottom: 1.5rem;
 }

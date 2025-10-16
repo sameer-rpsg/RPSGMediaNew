@@ -277,7 +277,7 @@ body:not(.animation-ended) .home__hero .sen {
   .home__video {
     height: 100vh;
     padding-bottom: 0;
-  background: linear-gradient(to right, #000, #6b0079);
+  /* background: linear-gradient(to right, #000, #6b0079); */
 
   }
 }

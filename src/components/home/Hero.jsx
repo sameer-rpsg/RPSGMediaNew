@@ -141,7 +141,7 @@ const Hero = () => {
       r,
       {
         left: 0,
-        top: 0,
+        top: "8px",
       },
       {
         width: "100vw",
@@ -149,10 +149,10 @@ const Hero = () => {
           return enterAnimationEnded ? s() : e.videoHeight;
         },
         top: function () {
-          return e.enterAnimationEnded ? a().top : e.offsetTop;
+          return enterAnimationEnded ? a().top : e.offsetTop;
         },
         left: function () {
-          return e.enterAnimationEnded ? a().left : e.offsetLeft;
+          return enterAnimationEnded ? a().left : e.offsetLeft;
         },
         clipPath:
           "polygon(0% 0%,25% 0%,50% 0%,100% 0%,100% 0%,100% 100%,100% 100%,0% 100%)",

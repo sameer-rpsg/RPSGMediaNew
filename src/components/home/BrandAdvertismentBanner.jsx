@@ -13,7 +13,7 @@ const slidesData = [
   {
     type: "full",
     bgType: "dark",
-    img: "https://www.rejouice.com/_vercel/image?url=https:%2F%2Fimages.prismic.io%2Frejouice-2024%2FZ1m0HZbqstJ98VgZ_oura-abdul-ovaice-3d-cd-031.png?auto=format,compress?auto=compress,format&w=1439&q=80",
+    img: "/assets/selectedimagescompressed/250805 - 4 - 084_11zon.jpg",
     // para: "Software",
     emm: ["Consumer Goods", "Software", "Health"],
   },
@@ -29,7 +29,7 @@ const slidesData = [
     type: "full",
     bgType: "dark",
     videoUrl:
-      "https://rejouice-2024.cdn.prismic.io/rejouice-2024/Z2BZvpbqstJ98kkM_RJ-HIGHLIGHT-Work-03.mp4",
+      "/assets/videos/Toast_10 (1).mp4",
     para: "E-commerce",
     // emm: "10+ years of expertise",
     emm: ["10+ years of expertise"],
@@ -54,7 +54,7 @@ const slidesData = [
     para: "Catalyzed ~71,000",
     emm: ["pre-orders after brand reveal", "(approximately $5.68 billion)."],
     videoUrl:
-      "https://rejouice-2024.cdn.prismic.io/rejouice-2024/Z2lj25bqstJ98yZV_RJ-WIDGET-RIVIAN.mp4",
+      "/assets/videos/homeherovideo.mp4",
     // emm: "generated within 90 days of launch",
     // img: "https://images.prismic.io/rejouice-2024/Z1m0-JbqstJ98Vh9_pergola-module-floor-1-360-grey-blue-bioclimatic-ceiling-and-curtains2.png?auto=format,compress",
   },
@@ -70,7 +70,7 @@ const slidesData = [
     bgType: "dark",
     para: "2 Offices",
     emm: ["San Diego, USA", "Paris, France"],
-    // img: "https://images.prismic.io/rejouice-2024/Z1m0-JbqstJ98Vh9_pergola-module-floor-1-360-grey-blue-bioclimatic-ceiling-and-curtains2.png?auto=format,compress",
+    img: "/assets/selectedimagescompressed/Manifest x Vaani Kapoor 14-08-254048 copy 2_11zon.jpg",
   },
   {
     type: "small",
@@ -139,7 +139,7 @@ const BrandAdvertismentBanner = () => {
                         tweenRefs.current[index] = gsap.to(video, {
                           currentTime: video.duration || 2,
                           duration: video.duration || 2,
-                          ease: "power2.out",
+                          ease: "linear",
                           onUpdate: () => {
                             // Ensure video is visually updating during tween
                             if (video.paused) video.play();
@@ -157,7 +157,7 @@ const BrandAdvertismentBanner = () => {
                         tweenRefs.current[index] = gsap.to(video, {
                           currentTime: 0,
                           duration: video.duration || 2,
-                          ease: "power2.in",
+                          ease: "linear",
                           onUpdate: () => {
                             if (video.paused) video.play();
                           },

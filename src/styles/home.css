@@ -51,7 +51,9 @@
 
 .about_para span {
     font-size: 4rem;
-    font-family: var(--secondaryfontRegular);
+    /* font-family: var(--secondaryfontRegular); */
+  font-family: var(--secondaryfontBold);
+
     font-weight: 600;
 }
 
@@ -90,7 +92,11 @@
         font-size: 2rem;
     }
 }
-
+@media only screen and (min-width:1660px){
+.Home_about_wrapper{
+    padding: 18rem 3rem;
+}
+}
 /* .Home_about_content a:after,
 .Home_about_content a:before {
     background-color: currentColor;

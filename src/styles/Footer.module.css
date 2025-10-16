@@ -2,7 +2,7 @@
   background: linear-gradient(to bottom, #000, #6b0079);
   color: #fff;
   padding: 5rem 3rem 3rem;
-    font-family: var(--secondaryfontMedium);
+  font-family: var(--secondaryfontBold);
   position: relative;
 }
 
@@ -136,7 +136,9 @@
 
 /* Responsive */
 @media (max-width: 1024px){
-
+.footer{
+  padding: 1rem 1.5rem;
+}
 }
 @media (max-width: 900px) {
     .footer{
@@ -156,7 +158,11 @@
     gap: 7rem;
   }
 }
+
 @media (max-width: 767px){
+  .footer{
+    padding: 1rem;
+  }
  .footerContainer {
     /* grid-template-columns: 1fr; */
     text-align: left;
@@ -168,7 +174,10 @@
   }
 }
 @media (max-width: 479px){
+  .footer{
+    padding: 1rem;
+  }
 .title{
-    font-size: 4rem;
+    font-size: 2rem;
   }
 }

@@ -20,7 +20,7 @@ const StickyCardSection = () => {
       id: 1,
       index: "01",
       PosterImgUrl: "/assets/thrposter.jpg",
-      logoImgUrl: "/assets/Thr_logo_updated.png",
+      logoImgUrl: "/assets/brandlogos/THR 1.png",
       paragraphs: [
         "Since our inception, we’ve brought together globally respected editorial voices to inform, inspire, and influence. From entertainment to luxury, our brands shape conversations that matter. We invest deeply in every title we own, giving each one the focus, integrity, and creative ambition it deserves—building media that endures, not just performs.",
         "We invest deeply in every title we own, giving each one the focus, integrity, and creative ambition it deserves—building media that endures, not just performs.",
@@ -35,7 +35,7 @@ const StickyCardSection = () => {
       id: 2,
       index: "02",
       PosterImgUrl: "/assets/esquireposter.jpg",
-      logoImgUrl: "/assets/esquire-logo-new.png",
+      logoImgUrl: "/assets/brandlogos/Esquire 1.png",
       paragraphs: [
         "Since our inception, we’ve brought together globally respected editorial voices to inform, inspire, and influence. From entertainment to luxury, our brands shape conversations that matter. We invest deeply in every title we own, giving each one the focus, integrity, and creative ambition it deserves—building media that endures, not just performs.",
         "We invest deeply in every title we own, giving each one the focus, integrity, and creative ambition it deserves—building media that endures, not just performs.",
@@ -50,7 +50,7 @@ const StickyCardSection = () => {
       id: 3,
       index: "03",
       PosterImgUrl: "/assets/manifestposter.jpg",
-      logoImgUrl: "/assets/Manifest_logo.png",
+      logoImgUrl: "/assets/brandlogos/Manifest 1.png",
       paragraphs: [
         "Since our inception, we’ve brought together globally respected editorial voices to inform, inspire, and influence. From entertainment to luxury, our brands shape conversations that matter. We invest deeply in every title we own, giving each one the focus, integrity, and creative ambition it deserves—building media that endures, not just performs.",
         "We invest deeply in every title we own, giving each one the focus, integrity, and creative ambition it deserves—building media that endures, not just performs.",
@@ -65,7 +65,7 @@ const StickyCardSection = () => {
       id: 4,
       index: "04",
       PosterImgUrl: "/assets/Robbreport.png",
-      logoImgUrl: "/assets/Robb_Report_white_1.png",
+      logoImgUrl: "/assets/brandlogos/Robb Report 1.png",
       paragraphs: [
         "Since our inception, we’ve brought together globally respected editorial voices to inform, inspire, and influence. From entertainment to luxury, our brands shape conversations that matter. We invest deeply in every title we own, giving each one the focus, integrity, and creative ambition it deserves—building media that endures, not just performs.",
         "We invest deeply in every title we own, giving each one the focus, integrity, and creative ambition it deserves—building media that endures, not just performs.",

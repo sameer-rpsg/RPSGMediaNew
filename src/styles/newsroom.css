@@ -149,6 +149,7 @@
   isolation: isolate;
   margin-bottom: 1rem;
 }
+
 .image-wrap[data-align="center center"] {
   justify-content: center;
   display: flex;
@@ -176,6 +177,10 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
+  transition: all 1s ease;
+}
+.news_card_cntr:hover .image__picture img{
+  transform: scale(1.05);
 }
 .news_label_cntr {
   cursor: pointer;
@@ -511,6 +516,11 @@
 }
 .typography{
   font-size: 1.5rem;
+}
+}
+@media only screen and (max-width: 767px){
+  .typography{
+  font-size: 2rem;
 }
 }
 @media only screen and (min-width: 480px) {

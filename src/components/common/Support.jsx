@@ -76,7 +76,7 @@ const Support = () => {
   }, []);
   return (
     <div id="support" className="support support--no-padding-top">
-      <h2 className="support_text text--subtitle1 text--light support__headline responsive-support__title">
+      <h2 className="support_text statement__heading text--light support__headline responsive-support__title">
         Licensing
       </h2>
       <p className="support__headline_para responsive-support__title">
