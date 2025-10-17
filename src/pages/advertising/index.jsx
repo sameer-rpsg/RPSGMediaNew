@@ -1,7 +1,7 @@
 import Advertising from "@/components/advertising/Advertising";
 import AdvertisingVideo from "@/components/advertising/AdvertisingVideo";
+import ProgressCaurousel from "@/components/advertising/ProgressCaurousel";
 // import Counter from "@/components/common/Counter";
-import OurEvents from "@/components/common/OurEvents";
 import Support from "@/components/common/Support";
 // import { useGSAP } from "@gsap/react";
 // import gsap from "gsap";
@@ -21,7 +21,7 @@ const index = () => {
       <AdvertisingVideo />
       {/* <Counter /> */}
       <Advertising />
-      <OurEvents />
+      <ProgressCaurousel/>
       <Support />
     </div>
   );

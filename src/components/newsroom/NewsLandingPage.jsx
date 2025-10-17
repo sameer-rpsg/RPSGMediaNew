@@ -20,7 +20,7 @@ const NewsLandingPage = () => {
           <picture className="image__pictures">
             <img
               src={
-                "https://www.deptagency.com/wp-content/uploads/2022/11/Depsters-talking-insights-hero.jpg"
+                "/assets/selectedimagescompressed/Manifest x Vaani Kapoor 14-08-254048 copy 2_11zon.jpg"
               }
               className=""
             />
