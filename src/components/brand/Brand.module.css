@@ -202,7 +202,7 @@
     color: #ffffff;
     letter-spacing: 0;
     width: 47ch;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     margin-bottom: 5rem;
     font-family: var(--secondaryfontMedium);
     font-size: 1.25rem;
@@ -308,7 +308,7 @@
     }
       .benefit_subtitle_wrapper {
         width: auto;
-        margin-top: 20px;
+        /* margin-top: 20px; */
     }
 }
 @media screen and (max-width: 767px) {

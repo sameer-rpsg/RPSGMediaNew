@@ -113,7 +113,7 @@
   font-family: var(--secondaryfontRegular);
   position: relative;
   z-index: 5;
-  background-color: var(--background);
+    background-color: #000;
 }
 .filters {
   width: 100%;

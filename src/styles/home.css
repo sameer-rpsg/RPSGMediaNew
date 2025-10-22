@@ -53,8 +53,8 @@
     font-size: 4rem;
     /* font-family: var(--secondaryfontRegular); */
   font-family: var(--secondaryfontBold);
-
     font-weight: 600;
+    color: #fff;
 }
 
 .Home_about_content a {
