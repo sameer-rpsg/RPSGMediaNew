@@ -5,14 +5,14 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
-import BrandDetailsInfo from "@/components/brand/BrandDetailsInfo";
-import Benefits from "@/components/brand/Benefits";
-import Leadership from "@/components/about/Leadership";
+// import BrandDetailsInfo from "@/components/brand/BrandDetailsInfo";
+// import Benefits from "@/components/brand/Benefits";
+// import Leadership from "@/components/about/Leadership";
 import { leaders2 } from "@/utils/Data";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const index = ({ params }) => {
+const Contact = ({ params }) => {
   // useGSAP(() => {
   //   gsap.to(`.${styles.parallax_bg}`, {
   //     yPercent: 20,
@@ -52,10 +52,10 @@ const index = ({ params }) => {
           transform: "translate(0%, 0%)",
         }}
       >
-        <img
+        {/* <img
           src="https://images.pexels.com/photos/458766/pexels-photo-458766.jpeg"
           alt=""
-        />
+        /> */}
       </div>
       <div className="news-landing-page_overlay">
         <div className={styles.news_landing_page_overlay_inner}>
@@ -76,11 +76,11 @@ const index = ({ params }) => {
         </div>
       </div>
     </section>
-    <BrandDetailsInfo/>
+    {/* <BrandDetailsInfo/>
     <Benefits/>
-    <Leadership title={"Editorial Team"} leaders={leaders2}/>
+    <Leadership title={"Editorial Team"} leaders={leaders2}/> */}
     </>
   );
 };
 
-export default index;
+export default Contact;

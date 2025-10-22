@@ -810,6 +810,8 @@ svg:not(:root) {
 .support {
   background-color: #000;
   padding: 80px 0;
+  position: relative;
+  z-index: 5;
 }
 
 .text--light {

@@ -8,7 +8,7 @@ import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BrandHero = () => {
+const BrandHero = ({params}) => {
   useGSAP(() => {
     gsap.to(`.${styles.parallax_bg}`, {
       yPercent: 20,
@@ -23,12 +23,13 @@ const BrandHero = () => {
   });
 
   const brands = [
+    { name: "Manifest", logo: "/assets/brandlogos/Manifest 1.png", slug: "Manifest" },
     { name: "THR", logo: "/assets/brandlogos/THR 1.png", slug: "thr" },
-    { name: "Esquire", logo: "/assets/brandlogos/nike.png", slug: "Esquire" },
-    { name: "Manifest", logo: "/assets/brandlogos/manifest.png", slug: "Manifest" },
-    { name: "Robb report", logo: "/assets/brandlogos/robbreport.png", slug: "robbreport" },
+    { name: "Esquire", logo: "/assets/brandlogos/Esquire 1.png", slug: "Esquire" },
+    { name: "Robb report", logo: "/assets/brandlogos/Robb Report 1.png", slug: "robbreport" },
   ];
-
+//  const { slug } = params;
+//   const brand = brandData[slug];
   return (
     <section id="section-5" className={styles.Brand_parallax_section}>
       <div className={styles.parallax_bg}>
@@ -46,15 +47,15 @@ const BrandHero = () => {
             style={{ border: "1px solid #000" }}
           >
             <Link
-              href={`/brand/${brand.slug}`}
+              href={`/brands/${brand.slug}`}
               className="our_client_logo_card card--client-logo"
-              style={{display:"flex",width:"100%",height:"100%"}}
+              style={{display:"flex",width:"100%",height:"100%", background:"#fff"}}
             >
-              <div className="card__center">
+              <div className="card__center" style={{height:"100%"}}>
                 <img
                   src={brand.logo}
                   alt={brand.name}
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  style={{ width: "auto", objectFit: "cover" }}
                 />
               </div>
             </Link>

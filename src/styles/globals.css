@@ -86,8 +86,9 @@ audio, canvas {
     display: inline-block;
     max-width: 100%;
 }
+
 .bgwhite {
-    background-color: #fff !important;
+    background-color: #e8e4e4 !important;
 }
 
 .manifestbgColor {

@@ -1,9 +1,41 @@
-import React from "react";
+import React,{useEffect} from "react";
 import styles from "@/styles/Footer.module.css";
 import { GoArrowUpRight } from "react-icons/go";
 import Link from "next/link";
-
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { useRouter } from "next/router";
+gsap.registerPlugin(ScrollTrigger);
 const Footer = () => {
+//   const router = useRouter();
+// useEffect(() => {
+//   // Create animation + store ScrollTrigger instance
+//   const tween = gsap.to(`.${styles.footer}`, {
+//     y: 0,
+//     scrollTrigger: {
+//       trigger: `.${styles.footer}`,
+//       start: "top 75%",
+//       end: "bottom 85%",
+//       scrub: true,
+//       markers: true, // disable in production
+//       pinSpacing: false,
+//     },
+//   });
+
+//   // Small delayed refresh for correct marker alignment after route change
+//   const timeout = setTimeout(() => {
+//     ScrollTrigger.refresh();
+//   }, 2000);
+
+//   return () => {
+//     // Kill only this footer’s trigger and its tween
+//     if (tween.scrollTrigger) tween.scrollTrigger.kill();
+//     tween.kill();
+//     clearTimeout(timeout);
+//   };
+// }, [router.asPath]);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>

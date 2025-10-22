@@ -7,7 +7,7 @@
   display: flex;
   padding: 2rem 3rem 0 3rem;
   width: 100%;
-  z-index: 4;
+  z-index: 99;
   justify-content: space-between;
   /* position: relative; */
   align-items: center;

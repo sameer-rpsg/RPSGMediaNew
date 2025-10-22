@@ -1,7 +1,7 @@
 .manifesto {
     position: relative;
     /* margin-top: clamp(0px, 83.071px + 100vw * -.0489, 64px); */
-    margin-bottom: 64px;
+    /* margin-bottom: 64px; */
     padding: 3rem 3rem;
     font-family: var(--secondaryfontRegular);
 }
@@ -193,10 +193,12 @@
 
 /* leadership */
 .leadershipSection {
+    position: relative;
     padding: 6rem 3rem;
     background: #fff;
     color: #111;
     font-family: var(--secondaryfontRegular);
+    z-index: 5;
 }
 
 .leadershipSection_container {
@@ -397,8 +399,10 @@
 .studioShowcase {
     position: relative;
     margin-top: 96px;
-    margin-bottom: 96px;
+    /* margin-bottom: 96px; */
     padding: 0 3rem;
+    z-index: 5;
+    background-color: var(--background);
 }
 
 .studioShowcase .itemDivider {

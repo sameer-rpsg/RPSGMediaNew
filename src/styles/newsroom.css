@@ -1,4 +1,5 @@
 .news-landing-page {
+  position: relative;
   background-color: #121212;
   display: grid;
   grid-template-columns: 1fr;
@@ -110,6 +111,9 @@
   /* background-color: rgb(255, 0, 0); */
   padding: 6rem 3rem 2rem;
   font-family: var(--secondaryfontRegular);
+  position: relative;
+  z-index: 5;
+  background-color: var(--background);
 }
 .filters {
   width: 100%;

@@ -470,6 +470,7 @@
 
 
 .contact__wrapper {
+    position:relative;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -478,6 +479,7 @@
     background-color: #fff;
     color: #000;
     font-family: var(--secondaryfontRegular);
+    z-index: 5;
 }
 
 .link {
