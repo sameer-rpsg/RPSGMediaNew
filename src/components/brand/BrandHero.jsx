@@ -39,12 +39,12 @@ const BrandHero = ({params}) => {
         />
       </div>
 
-      <ul className="clients-tile" style={{ padding: "3rem" }}>
+      <ul className="clients-tile" style={{ padding: "3rem", margin:0 }}>
         {brands.map((brand, i) => (
           <li
             key={i}
             className="our_client_logo"
-            style={{ border: "1px solid #000" }}
+            style={{ border: "1px solid #000", height:"150px" }}
           >
             <Link
               href={`/brands/${brand.slug}`}
