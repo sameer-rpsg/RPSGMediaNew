@@ -904,7 +904,7 @@ svg:not(:root) {
 }
 
 .support__links_card_btn {
-  background-color: rgb(34 34 34);
+  background-color: rgb(255, 255, 255);
   color: rgb(255 255 255);
   display: inline-flex;
   height: 1.95rem;

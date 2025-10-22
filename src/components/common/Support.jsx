@@ -23,7 +23,7 @@ const Support = () => {
       return; // Exit early if there's a mismatch
     }
 
-    supportbtns.forEach((btnn, index) => {
+    supportbtns.forEach((btnn, index, svg) => {
       const RtextCard = supportCardshidden[index];
       const RtextTitle = supportCards_Title[index];
       const tl = gsap.timeline({ paused: true });
@@ -53,9 +53,10 @@ const Support = () => {
             ease: "power4.inOut",
             duration: 0.8,
             rotate: "245deg",
+            backgroundColor:"gray",
           },
           "a"
-        );
+        )
 
       const handleClick = () => {
         if (tl.isActive()) return; // Avoid triggering animations if one is already active
