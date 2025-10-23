@@ -22,6 +22,7 @@
     position: relative;
     width: 100%;
     font-family: var(--secondaryfontMedium);
+    background-color: #000;
 }
 .first {
     grid-column: 1 / span 2;

@@ -2,6 +2,7 @@
 .Home_about_wrapper {
     position: relative;
     padding: 8rem 3rem;
+    background-color: #000;
 }
 
 .taglines {
@@ -200,6 +201,7 @@
     /* margin-left: var(--grid-margin);
     margin-right: var(--grid-margin); */
     font-family: var(--secondaryfontMedium);
+    color: #fff;
 }
 
 .Home_about_content_item .Home_about_content_title {
