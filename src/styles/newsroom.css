@@ -254,7 +254,7 @@
   color: #fff;
 }
 .block-article-post-header {
-  padding: 3.75rem 3rem;
+  padding: 7rem 3rem;
   display: grid;
   grid-template-areas:
     "back"
@@ -267,10 +267,15 @@
   row-gap: 1.5rem;
   background-color: rgb(0, 0, 0);
 }
+.article_cta-buttonInner{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 .article_cta-button svg {
   color: #fff;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 2rem;
+  width: 2rem;
 }
 .article_cta-button svg * {
   transition-duration: 0.3s;
@@ -293,7 +298,7 @@
   align-self: center;
   display: none;
   grid-area: image;
-  max-width: 30rem;
+  max-width: 33rem;
 }
 .author__portrait {
   height: 4rem;
@@ -541,7 +546,7 @@
     padding: 0 1.5rem 3rem;
   }
   .block-article-post-header{
-    padding: 3.75rem 1.5rem;
+    padding: 5rem 1.5rem;
   }
 }
 @media only screen and (max-width: 767px) {

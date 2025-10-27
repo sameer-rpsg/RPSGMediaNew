@@ -43,8 +43,9 @@ const Hero = () => {
 
     // Animating the sentences in .home__hero__line
     tl_enterAnimation.fromTo(
-      ".homeheroline .sen",{
-        y:120
+      ".homeheroline .sen",
+      {
+        y: 120,
       },
       {
         y: 0,
@@ -78,20 +79,18 @@ const Hero = () => {
       pin: t,
       pinSpacing: false,
       trigger: n,
-      start: "top bottom",
-      end: "bottom bottom",
+      start: "top+=1px bottom",
+      end: "bottom bottom+=1px",
       scrub: true,
+      pinSpacing: false,
     });
     // gsap.set(t,{
     //   opacity:0
     // })
-    gsap.to(
-      t,
-      {
-        opacity: 1,
-        delay: 1,
-      }
-    );
+    gsap.to(t, {
+      opacity: 1,
+      delay: 1,
+    });
     const a = function () {
       const t = r.getBoundingClientRect();
       const i = n.getBoundingClientRect();
@@ -123,12 +122,12 @@ const Hero = () => {
           return !(window.innerWidth < 768);
         },
         onRefresh: function () {
-          if (window.innerWidth > 768) {
-            const t = r.getBoundingClientRect();
-            const i = n.getBoundingClientRect();
-            e.offsetTop = e.isPortrait ? i.top - t.top - i.height : -t.top;
-            e.offsetLeft = -t.left;
-          }
+          // if (window.innerWidth > 768) {
+          //   const t = r.getBoundingClientRect();
+          //   const i = n.getBoundingClientRect();
+          //   e.offsetTop = e.isPortrait ? i.top - t.top - i.height : -t.top;
+          //   e.offsetLeft = -t.left;
+          // }
         },
         onEnterBack: function () {
           t.classList.remove("is-finished");
