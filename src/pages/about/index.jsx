@@ -11,7 +11,7 @@ const index = () => {
       <About />
     <Leadership title={"Our Leadership"} leaders={leaders}/>
     <Manifesto/>
-    {/* <Office/> */}
+    <Office/>
     </div>
   )
 }
