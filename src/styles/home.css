@@ -35,6 +35,7 @@
     line-height: 2.8rem;
     /* opacity: 0; */
     opacity: 1;
+    font-family: var(--secondaryfontMedium);
 }
 
 .Home_about_content * {
@@ -53,11 +54,21 @@
 .about_para span {
     font-size: 4rem;
     /* font-family: var(--secondaryfontRegular); */
-  font-family: var(--secondaryfontBold);
-    font-weight: 600;
+  font-family: var(--secondaryfontMedium);
+    font-weight: 100;
     color: #fff;
+    line-height: 1;
+    text-align: justify;
 }
+.extra-split-word {
+        overflow: hidden;
+        vertical-align: bottom;
+    }
+    .extra-split-line{
+          overflow: hidden;
+          vertical-align: bottom;
 
+      }
 .Home_about_content a {
     display: inline-block;
     display: inline;
@@ -212,6 +223,7 @@
     font-size: 1.2rem;
     font-weight: 300;
     line-height: 1.2;
+    font-family: var(--secondaryfontMedium);
 }
 
 .Home_about_content_item .Home_about_content {
@@ -240,7 +252,7 @@
     left: 0;
     opacity: 0.25;
     position: absolute;
-    transform: scaleX(1);
+    transform: scaleX(0);
     width: 100%;
 }
 
@@ -328,7 +340,7 @@
 .content_more {
     /* font-size: 1rem; */
     line-height: 1.2;
-    font-size: 1rem;
+    font-size: 12px;
 }
 
 @media (hover: hover) and (pointer: fine) {

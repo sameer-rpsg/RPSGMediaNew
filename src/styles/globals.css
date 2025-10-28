@@ -325,7 +325,7 @@ audio, canvas {
   font-size: 32px;
   line-height: 115%;
   letter-spacing: -.01em;
-  text-align: start;
+  text-align: center;
   font-family: var(--secondaryfontRegular);
   font-weight: 300;
 }
@@ -436,7 +436,14 @@ audio, canvas {
     opacity: 1 !important;
   }
 }
-
+@media only screen and (min-width:1024px){
+  .card_about_content{
+    /* max-width: fit-content; */
+  }
+.about_intro_desc{
+  font-size: 1.8rem;
+}
+}
 /* newbutton */
 .list__item {
   align-items: center;

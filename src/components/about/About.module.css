@@ -207,7 +207,7 @@
 }
 
 .leadershipSection_heading {
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 2rem;
     text-transform: capitalize;
@@ -275,14 +275,15 @@
 
 .gridTop {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
 }
 
 /* Grid of Leaders */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
 }
 
@@ -314,7 +315,7 @@
 /* Responsive */
 @media (max-width: 1024px) {
     .leadershipSection_featured {
-        grid-template-columns: 1fr;
+        /* grid-template-columns: 1fr; */
     }
 
     .featuredImage {
@@ -323,7 +324,7 @@
 
     .gridTop {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+        grid-template-columns: 1fr 1fr;
     }
     .leadershipSection_heading{
         font-size: 3rem;
@@ -331,6 +332,13 @@
 }
 
 @media (max-width: 768px) {
+    .gridTop{
+            grid-template-columns: 1fr;
+    }
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+    }
     .leadershipSection {
         padding: 4rem 2rem;
     }
@@ -343,12 +351,12 @@
 @media (max-width: 600px) {
 
     .grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 1.25rem;
     }
 
     .quote {
-        font-size: 0.85rem;
+        font-size: 1.25rem;
     }
 
     .linkedin {
@@ -362,6 +370,9 @@
 }
 
 @media (max-width: 479px) {
+    .leadershipSection_featured{
+        grid-template-columns:1fr;
+    }
     .leadershipSection {
         padding: 2rem 1rem;
     }
@@ -455,7 +466,8 @@
 
 .studioShowcase .info {
     position: sticky;
-    top: var(--grid-margin);
+    /* top: var(--grid-margin); */
+    top: 6rem;
     height: fit-content;
     display: flex;
     align-items: flex-start;

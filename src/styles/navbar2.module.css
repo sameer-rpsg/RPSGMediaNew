@@ -2,10 +2,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 90px;
+  height: 80px;
   background-color: rgba(255, 255, 255, 0);
   display: flex;
-  padding: 2rem 3rem 0 3rem;
+  padding: 1.5rem 3rem 0 3rem;
   width: 100%;
   z-index: 9;
   justify-content: space-between;
@@ -146,6 +146,7 @@
 @media screen and (max-width: 1024px) {
   .navbar_wrapper2{
     padding: 2rem 1.5rem;
+    height: 90px;
   }
 .linksCntr ul li{
   padding-right: 2rem;

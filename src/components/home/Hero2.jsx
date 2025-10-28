@@ -14,19 +14,19 @@ const Hero2 = () => {
         gsap.set(
           document.body,
           enable
-            ? { clearProps: "height,overflow" }
-            : { height: "100vh", overflow: "hidden" }
+          ? { clearProps: "height,overflow" }
+          : { height: "100vh", overflow: "hidden" }
         );
       }
     };
-
+    
     const isPortrait = matchMedia("(orientation: portrait)").matches;
-
+    
     // -------------------------
     // INIT ENTER ANIMATION
     // -------------------------
     let enterAnimationEnded = false;
-
+    
     let tl_enterAnimation = gsap.timeline({
       paused: true, // Start paused
       onComplete: function () {
@@ -35,10 +35,10 @@ const Hero2 = () => {
         }, 1000); // Mark animation as ended after a slight delay
       },
     });
-
+    
     // Animating the sentences in .home__hero__line
     tl_enterAnimation.fromTo(
-      ".homeheroline .sen",
+      [".homeheroline .sen",".homeherolineMbl .sen"],
       {
         y: 120,
       },
@@ -49,23 +49,28 @@ const Hero2 = () => {
         opacity: 1,
         ease: "expo.out",
       }
-    );
-
+    )
+    tl_enterAnimation.to(".home__hero__videoMbl", {
+        opacity: 1,
+        // delay: 1,
+      });
+    
     requestAnimationFrame(function () {
       tl_enterAnimation.play();
     });
     //   gsap.set(".homeheroline .sen", { clearProps: "all" })
     //   .call(() => heroVideo());
-
+    
     if (window.firstLoad) {
       requestAnimationFrame(() => window.loaderAnimation?.play());
     } else {
       requestAnimationFrame(() => tl_enterAnimation.play());
     }
-
+    
     // -------------------------
     // HERO VIDEO SCROLL ANIMATION
     // -------------------------
+    if (window.innerWidth < 600) return;
     function heroVideo() {
       //   const wrapper = window.wrapper;
       //   if (!wrapper) return;
@@ -85,10 +90,10 @@ const Hero2 = () => {
         end: "bottom bottom",
         scrub: true,
       });
- gsap.to(heroVideoWrapper, {
-      opacity: 1,
-      delay: 1,
-    });
+      gsap.to(heroVideoWrapper, {
+        opacity: 1,
+        delay: 1,
+      });
       ScrollTrigger.create({
         trigger: ".home__video",
         pin: ".home__hero__metas",
@@ -152,9 +157,9 @@ const Hero2 = () => {
           height: () => (enterAnimationEnded ? getVideoHeight() : videoHeight),
           top: () => (enterAnimationEnded ? getOffsets().top : offsetTop),
           left: () => (enterAnimationEnded ? getOffsets().left : offsetLeft),
-           clipPath:
-          "polygon(0% 0%,25% 0%,50% 0%,100% 0%,100% 0%,100% 100%,100% 100%,0% 100%)",
-          ease:"linear"
+          clipPath:
+            "polygon(0% 0%,25% 0%,50% 0%,100% 0%,100% 0%,100% 100%,100% 100%,0% 100%)",
+          ease: "linear",
         },
         "start"
       );
@@ -183,20 +188,20 @@ const Hero2 = () => {
 
       if (!videoElement) return;
 
-    //   const isLowBattery = () =>
-    //     document.body.classList.contains("low-battery");
+      //   const isLowBattery = () =>
+      //     document.body.classList.contains("low-battery");
 
-    //   videoElement.addEventListener("suspend", () => {
-    //     document.body.classList.add("low-battery");
+      //   videoElement.addEventListener("suspend", () => {
+      //     document.body.classList.add("low-battery");
 
-    //     videoElement.addEventListener("click", () => videoElement.play());
-    //     videoElement.addEventListener("play", () =>
-    //       document.body.classList.remove("low-battery")
-    //     );
+      //     videoElement.addEventListener("click", () => videoElement.play());
+      //     videoElement.addEventListener("play", () =>
+      //       document.body.classList.remove("low-battery")
+      //     );
 
-    //     if (isVideoPlaying(videoElement))
-    //       document.body.classList.remove("low-battery");
-    //   });
+      //     if (isVideoPlaying(videoElement))
+      //       document.body.classList.remove("low-battery");
+      //   });
 
       ScrollTrigger.create({
         trigger: videoElement,
@@ -204,13 +209,11 @@ const Hero2 = () => {
         start: "top bottom",
         end: "top top",
         onEnter: () => {
-          if (!isVideoPlaying(videoElement))
-            videoElement.play();
-        updateCursor();
+          if (!isVideoPlaying(videoElement)) videoElement.play();
+          updateCursor();
         },
         onEnterBack: () => {
-          if (!isVideoPlaying(videoElement))
-            videoElement.play();
+          if (!isVideoPlaying(videoElement)) videoElement.play();
           window.cursor?.leave(true);
         },
         onLeave: () => {
@@ -253,10 +256,9 @@ const Hero2 = () => {
       );
     }
 
-
     // Init all parts
     videoState();
-    heroVideo(); 
+    heroVideo();
 
     // Cleanup
     return () => {
@@ -269,8 +271,60 @@ const Hero2 = () => {
   return (
     <>
       <section className="home__hero">
+        <div className="mbl_hero">
+        <video
+          className="mbl_heroVideo"
+          src="/assets/videos/homeherovideo.mp4"
+          autoPlay
+          loop
+          playsInline
+          muted
+          // poster="../../../assets/rpsg_logoonly.png"
+          crossOrigin="anonymous"
+        ></video>
+         <div className="home__hero__inner_mbl">
+          <div class="p1_mbl">
+            <div class="homeherolineMbl">
+              <div className="sen">Defining</div>
+            </div>
+            {/* <div className="homeheroline"> */}
+            {/* <div className="homeheroline"> */}
+            <div
+              className="home__hero__videoMbl"
+              data-cursor="sound on"
+              data-cursor-click="sound off"
+            >
+              {/* <video
+                src="/assets/videos/homeherovideo.mp4"
+                autoPlay
+                loop
+                playsInline
+                muted
+                poster="../../../assets/rpsg_logoonly.png"
+                crossOrigin="anonymous"
+              ></video> */}
+            </div>
+            {/* </div> */}
+            <div class="homeherolineMbl">
+              <div className="sen">And</div>
+            </div>
+            {/* </div> */}
+          </div>
+          <div class="p2_mbl">
+            <div class="homeherolineMbl">
+              <div className="sen">Luxury,</div>
+            </div>
+            <div class="homeherolineMbl">
+              <div className="sen">Influence,</div>
+            </div>
+            <div class="homeherolineMbl">
+              <div className="sen">Modern Media.</div>
+            </div>
+          </div>
+        </div>
+        </div>
         <div className="home__hero__inner">
-        <div class="p1">
+          <div class="p1">
             <div class="homeheroline">
               <div className="sen">Defining</div>
             </div>

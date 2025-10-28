@@ -53,7 +53,7 @@ const index = ({ params }) => {
         }}
       >
         <img
-          src="https://images.pexels.com/photos/458766/pexels-photo-458766.jpeg"
+          src="/assets/images/Asset 8.webp"
           alt=""
         />
       </div>

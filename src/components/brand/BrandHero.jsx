@@ -9,18 +9,18 @@ import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 const BrandHero = ({params}) => {
-  useGSAP(() => {
-    gsap.to(`.${styles.parallax_bg}`, {
-      yPercent: 20,
-      ease: "none",
-      scrollTrigger: {
-        trigger: `.${styles.Brand_parallax_section}`,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-  });
+  // useGSAP(() => {
+  //   gsap.to(`.${styles.parallax_bg}`, {
+  //     yPercent: 20,
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       trigger: `.${styles.Brand_parallax_section}`,
+  //       start: "top bottom",
+  //       end: "bottom top",
+  //       scrub: true,
+  //     },
+  //   });
+  // });
 
   const brands = [
     { name: "Manifest", logo: "/assets/brandlogos/Manifest 1.png", slug: "Manifest" },
@@ -34,22 +34,22 @@ const BrandHero = ({params}) => {
     <section id="section-5" className={styles.Brand_parallax_section}>
       <div className={styles.parallax_bg}>
         <img
-          src="https://images.pexels.com/photos/458766/pexels-photo-458766.jpeg"
+          src="/assets/images/Asset 5.webp"
           alt=""
         />
       </div>
 
-      <ul className="clients-tile" style={{ padding: "3rem", margin:0 }}>
+      <ul className={`clients-tile ${styles.about_clients_tile}`} style={{ padding: "3rem", margin:0, gap:"1rem" }}>
         {brands.map((brand, i) => (
           <li
             key={i}
             className="our_client_logo"
-            style={{ border: "1px solid #000", height:"150px" }}
+            style={{ height:"150px" }}
           >
             <Link
               href={`/brands/${brand.slug}`}
               className="our_client_logo_card card--client-logo"
-              style={{display:"flex",width:"100%",height:"100%", background:"#fff"}}
+              style={{display:"flex",width:"100%",height:"100%"}}
             >
               <div className="card__center" style={{height:"100%"}}>
                 <img
