@@ -28,7 +28,7 @@
 
 .label {
   color: #aaa;
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-bottom: 0.3rem;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .newsletter p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #ccc;
   margin-bottom: 0.8rem;
 }
@@ -134,11 +134,10 @@
   padding-top: 1rem;
   margin-top: 1rem;
 }
-
 /* Responsive */
 @media (max-width: 1024px){
 .footer{
-  padding: 1rem 1.5rem;
+  padding: 2rem 1.5rem;
 }
 }
 @media (max-width: 900px) {
@@ -171,14 +170,26 @@
     flex-direction: column;
   }
   .title{
-    font-size: 3rem;
+    font-size: 2rem;
+  }
+  .lefttt{
+    width: 100%;
+  }
+  .right{
+    width: 100%;
+  }
+  .inputWrapper{
+    width: 92%;
   }
 }
 @media (max-width: 479px){
+  .rightfirstpart{
+    gap: 3rem;
+  }
   .footer{
     padding: 1rem;
   }
 .title{
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }

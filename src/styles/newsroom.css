@@ -516,6 +516,11 @@
 }
 /* article__video-wrapper */
 /* newsmedia-section */
+@media only screen and (max-width: 767px){
+  .typography{
+  font-size: 2rem;
+}
+}
 @media only screen and (max-width: 479px){
 .new-media_filter{
       padding: 6rem 1rem 2rem;
@@ -525,11 +530,6 @@
 }
 .typography{
   font-size: 1.5rem;
-}
-}
-@media only screen and (max-width: 767px){
-  .typography{
-  font-size: 2rem;
 }
 }
 @media only screen and (min-width: 480px) {

@@ -20,7 +20,7 @@ const NewsLandingPage = () => {
           <picture className="image__pictures">
             <img
               src={
-                "/assets/selectedimagescompressed/Manifest x Vaani Kapoor 14-08-254048 copy 2_11zon.jpg"
+                "/assets/images/Asset 7.webp"
               }
               className=""
             />

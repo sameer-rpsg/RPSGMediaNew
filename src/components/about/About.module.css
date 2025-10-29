@@ -93,6 +93,7 @@
 
 .manifesto>.manifesto_statements>li>h3 {
     margin: clamp(12px, 6.033px + 100vw * .0153, 32px) 0;
+    align-items: center;
 }
 
 .h2 {
@@ -132,7 +133,7 @@
     opacity: 1;
 }
 
-@media screen and (max-width:1290) {
+@media screen and (max-width:1024px) {
     .manifesto_para {
         /* max-width:50.5%; */
         /* margin-left: 41.6666666667%; */
@@ -144,12 +145,18 @@
     .p_small {
         max-width: 25%;
     }
+     .manifesto{
+        padding: 4rem 1.5rem;
+    }
 
 }
 
 @media screen and (max-width:991px) {
     .p_small {
         max-width: 35%;
+    }
+    .manifesto{
+        padding: 4rem 1.5rem;
     }
 }
 
@@ -181,13 +188,21 @@
 }
 
 @media screen and (max-width:479px) {
+    .manifesto_title{
+        font-size: 1.5rem;
+    }
     .manifesto_header {
         flex-direction: column;
     }
 
     .p_small {
-        max-width: 80%;
+        max-width: 50%;
+        font-size: 1rem;
     }
+    .h2{
+        font-size: 2.5rem;
+    }
+    
 }
 
 
@@ -242,7 +257,7 @@
 }
 
 .quote {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #333;
     line-height: 1.5;
     margin-bottom: 2rem;
@@ -250,12 +265,12 @@
 
 .leadershipSection_name {
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: .95rem;
     margin: 0.5rem 0;
 }
 
 .role {
-    font-size: 0.85rem;
+    font-size: .95rem;
     color: #888;
     margin: 0;
 }
@@ -329,18 +344,22 @@
     .leadershipSection_heading{
         font-size: 3rem;
     }
+     .leadershipSection {
+        padding: 4rem 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
     .gridTop{
             grid-template-columns: 1fr;
+            gap: 0;
     }
     .grid {
         grid-template-columns: 1fr 1fr;
         gap: 1.25rem;
     }
     .leadershipSection {
-        padding: 4rem 2rem;
+        padding: 4rem 1rem;
     }
     .leadershipSection_heading {
         font-size: 2rem;
@@ -351,7 +370,7 @@
 @media (max-width: 600px) {
 
     .grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 1.25rem;
     }
 
@@ -375,6 +394,9 @@
     }
     .leadershipSection {
         padding: 2rem 1rem;
+    }
+    .leadershipSection_heading{
+        font-size: 1.5rem;
     }
 }
 

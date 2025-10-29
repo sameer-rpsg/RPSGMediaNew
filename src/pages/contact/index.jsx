@@ -6,9 +6,9 @@ import React from 'react'
 const index = () => {
   return (
     <>
-   <Contact/>
-   <ContactInfo/>
    <ContactForm/>
+   {/* <Contact/> */}
+   <ContactInfo/>
     </>
   )
 }

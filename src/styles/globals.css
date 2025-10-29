@@ -325,7 +325,7 @@ audio, canvas {
   font-size: 32px;
   line-height: 115%;
   letter-spacing: -.01em;
-  text-align: center;
+  text-align: justify;
   font-family: var(--secondaryfontRegular);
   font-weight: 300;
 }
@@ -382,7 +382,6 @@ audio, canvas {
   } */
   .about_intro_desc {
     font-size: 1.25rem;
-    text-align: center;
     line-height: 1.1;
     letter-spacing: 0.01em;
   }

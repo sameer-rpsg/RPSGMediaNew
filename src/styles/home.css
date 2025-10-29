@@ -29,7 +29,7 @@
     --transformOrigin: 0% 50%; */
     --scale: 1;
     --transformOrigin: 100% 50%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: -0.039rem;
     line-height: 2.8rem;
@@ -57,7 +57,7 @@
   font-family: var(--secondaryfontMedium);
     font-weight: 100;
     color: #fff;
-    line-height: 1;
+    line-height: 135%;
     text-align: justify;
 }
 .extra-split-word {
@@ -65,8 +65,9 @@
         vertical-align: bottom;
     }
     .extra-split-line{
-          overflow: hidden;
-          vertical-align: bottom;
+        overflow: hidden;
+        vertical-align: bottom;
+        line-height: 135%;
 
       }
 .Home_about_content a {
@@ -101,7 +102,7 @@
     }
 
     .about_para span {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 }
 @media only screen and (min-width:1660px){
@@ -340,7 +341,7 @@
 .content_more {
     /* font-size: 1rem; */
     line-height: 1.2;
-    font-size: 12px;
+    font-size: 1rem;
 }
 
 @media (hover: hover) and (pointer: fine) {

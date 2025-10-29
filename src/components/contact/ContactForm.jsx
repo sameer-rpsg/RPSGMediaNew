@@ -77,8 +77,6 @@
 // };
 
 // export default ContactForm;
-
-"use client";
 import React, { useState } from "react";
 import styles from "@/components/contact/Contact.module.css";
 import Link from "next/link";

@@ -64,12 +64,12 @@
         -moz-column-gap: var(--grid-gutter, 0);
         column-gap: var(--grid-gutter, 0);
         display: grid;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-style: normal;
         font-weight: 300;
         grid-template-columns: repeat(var(--grid-size), 1fr);
         letter-spacing: -.02rem;
-        line-height: 2.4rem;
+        line-height: 2rem;
         margin-left: var(--grid-margin);
         margin-left: 0;
         margin-right: var(--grid-margin);
@@ -108,7 +108,7 @@
   align-items: flex-start;
   background: #000;
   color: #fff;
-  padding: 80px 3rem;
+  padding: 100px 3rem;
   font-family: var(--secondaryfontMedium);
   gap: 6rem;
   flex-wrap: wrap;
@@ -214,7 +214,7 @@
   .contactSection {
     flex-direction: column;
     gap: 3rem;
-    padding: 60px 1.5rem;
+    padding: 100px 1.5rem;
   }
 
   .form {
@@ -224,7 +224,7 @@
 
 @media (max-width: 767px) {
     .contactSection {
-        padding: 40px 1rem;
+        padding: 100px 1rem;
     }
 
   .contactSection_left h2 {

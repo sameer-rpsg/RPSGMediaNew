@@ -40,9 +40,8 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
         {/* Left Section */}
-        <div className={styles.left}>
+        <div className={styles.lefttt}>
           <h2 className={styles.title}>Do it once. Do it right</h2>
-
           <div className={styles.info}>
             <p className={styles.label}>New Business:</p>
             <a href="mailto:info@rpsgmedia.com" className={styles.email}>
