@@ -1,10 +1,67 @@
-import React from "react";
+import React,{useEffect,useRef} from "react";
 import styles from "@/components/brand/Brand.module.css";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import SplitText from "gsap/dist/SplitText";
+import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger,SplitText)
 const Benefits = () => {
+const paraRef = useRef(null);
+
+  useEffect(() => {
+    const el = paraRef.current;
+
+    // Split paragraph into lines first
+    const splitLines = new SplitText(el, {
+      type: "lines",
+      linesClass: "extra-split-line",
+    });
+
+    // Then split each line into words
+    const splitWords = new SplitText(splitLines.lines, {
+      type: "lines",
+      // wordsClass: "extra-split-word",
+       linesClass: "extra-split-line",
+    });
+
+    // Animate the words inside each line
+    const tl = gsap.timeline({scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      },});
+    
+    tl.from(splitWords.lines, {
+      opacity: 0,
+      yPercent: 100,
+      ease: "power3.out",
+      duration: 1,
+      stagger: 0.05, // each word staggered
+    }
+    // ,"a").to(".split",{
+    //   transform:"scaleX(1)",
+    //   transformOrigin:"left",
+    //   delay:0.5
+    // },"a"),
+    // tl.fromTo(".will-animate",{
+    //   opacity:0
+    // },{
+    //   duration:1,
+    //   ease:"linear",
+    //   opacity:1
+    // }
+  )
+    
+    // Cleanup
+    return () => {
+      splitWords.revert();
+      splitLines.revert();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
   return (
     <div className={styles.benefits}>
       <div className={styles.benefit_subtitle_wrapper}>
-        <div className={`${styles.scroll_text} ${styles._16px}`}>
+        <div className={`${styles.scroll_text} ${styles._16px}`} ref={paraRef}>
             <p>
               Since our inception, we've brought together globally respected
               editorial voices to inform, inspire, and influence. From

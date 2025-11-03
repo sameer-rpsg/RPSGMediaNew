@@ -131,7 +131,8 @@ const ContactForm = () => {
           </label>
         </div>
 
-        <div className={styles.inputGroup}>
+        <div className={`${styles.inputGroup} ${styles.inputGroupComb}`}>
+          <div style={{position:"relative"}} className={styles.inputGroupEmail}>
           <input
             type="email"
             name="email"
@@ -140,9 +141,22 @@ const ContactForm = () => {
             required
           />
           <label className={formData.email ? styles.active : ""}>Email</label>
+          </div>
+          <div style={{position:"relative"}} className={styles.inputGroupTel}>
+
+           <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+          />
+          <label className={formData.phone ? styles.active : ""}>
+            Phone Number
+          </label>
+          </div>
         </div>
 
-        <div className={styles.inputGroup}>
+        {/* <div className={styles.inputGroup}>
           <input
             type="tel"
             name="phone"
@@ -152,7 +166,7 @@ const ContactForm = () => {
           <label className={formData.phone ? styles.active : ""}>
             Phone Number
           </label>
-        </div>
+        </div> */}
         <div className={styles.inputGroup}>
           <textarea
             name="comment"

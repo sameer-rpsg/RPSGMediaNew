@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect,useRef} from "react";
 import styles from "@/components/brand/Brand.module.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -9,8 +9,9 @@ import BrandDetailsInfo from "@/components/brand/BrandDetailsInfo";
 import Benefits from "@/components/brand/Benefits";
 import Leadership from "@/components/about/Leadership";
 import { leaders2 } from "@/utils/Data";
+import SplitText from "gsap/dist/SplitText";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const index = ({ params }) => {
   // useGSAP(() => {
@@ -40,6 +41,59 @@ const index = ({ params }) => {
   //     ease: "none",
   //   });
   // })
+  const paraRef = useRef(null);
+
+  useEffect(() => {
+    const el = paraRef.current;
+
+    // Split paragraph into lines first
+    const splitLines = new SplitText(el, {
+      type: "lines",
+      linesClass: "extra-split-line",
+    });
+
+    // Then split each line into words
+    const splitWords = new SplitText(splitLines.lines, {
+      type: "lines",
+      // wordsClass: "extra-split-word",
+       linesClass: "extra-split-line",
+    });
+
+    // Animate the words inside each line
+    const tl = gsap.timeline({scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      },});
+    
+    tl.from(splitWords.lines, {
+      opacity: 0,
+      yPercent: 100,
+      ease: "power3.out",
+      duration: 1,
+      stagger: 0.05, // each word staggered
+    }
+    // ,"a").to(".split",{
+    //   transform:"scaleX(1)",
+    //   transformOrigin:"left",
+    //   delay:0.5
+    // },"a"),
+    // tl.fromTo(".will-animate",{
+    //   opacity:0
+    // },{
+    //   duration:1,
+    //   ease:"linear",
+    //   opacity:1
+    // }
+  )
+    
+    // Cleanup
+    return () => {
+      splitWords.revert();
+      splitLines.revert();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
   return (
     <>
     <section id="section-5" className={styles.Brand_parallax_section}>
@@ -64,11 +118,11 @@ const index = ({ params }) => {
           <div className="Home_about_content">
             <div>
               <div className="about_para">
-                <span>
+                <p ref={paraRef}>
                   We build Iconic Media Brands That Shape Culture, Spark
                   Conversations, And Drive Influence — Across Entertainment,
                   Lifestyle, Luxury.
-                </span>
+                </p>
               </div>
             </div>
           </div>

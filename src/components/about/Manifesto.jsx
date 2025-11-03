@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from "react";
 import styles from "@/components/about/About.module.css";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger)
+import SplitText from "gsap/dist/SplitText";
+gsap.registerPlugin(ScrollTrigger,SplitText);
 const Manifesto = () => {
   const manifestoData = [
     { id: 1, text: "Design is not tequila. It can’t make everyone happy." },
@@ -77,14 +78,66 @@ const Manifesto = () => {
   }, []);
 
 
+const paraRef = useRef(null);
 
+  useEffect(() => {
+    const el = paraRef.current;
+
+    // Split paragraph into lines first
+    const splitLines = new SplitText(el, {
+      type: "lines",
+      linesClass: "extra-split-line",
+    });
+
+    // Then split each line into words
+    const splitWords = new SplitText(splitLines.lines, {
+      type: "lines",
+      // wordsClass: "extra-split-word",
+       linesClass: "extra-split-line",
+    });
+
+    // Animate the words inside each line
+    const tl = gsap.timeline({scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      },});
+    
+    tl.from(splitWords.lines, {
+      opacity: 0,
+      yPercent: 100,
+      ease: "power3.out",
+      duration: 1,
+      stagger: 0.05, // each word staggered
+    }
+    // ,"a").to(".split",{
+    //   transform:"scaleX(1)",
+    //   transformOrigin:"left",
+    //   delay:0.5
+    // },"a"),
+    // tl.fromTo(".will-animate",{
+    //   opacity:0
+    // },{
+    //   duration:1,
+    //   ease:"linear",
+    //   opacity:1
+    // }
+  )
+    
+    // Cleanup
+    return () => {
+      splitWords.revert();
+      splitLines.revert();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
   return (
     <div className={styles.manifesto}>
       <div className={`${styles.g_row} ${styles.manifesto_header}`}>
         <h2 className={`${styles.manifesto_title} ${styles.g_col}`}>
           Manifesto
         </h2>{" "}
-        <p className={styles.manifesto_para}>
+        <p className={styles.manifesto_para} ref={paraRef}>
           Design is a process, not a multiple-choice event. Ours is focused on
           uncovering the essential and allowing it to guide the way forward. At
           the heart of our approach lies transparency, iteration, trust, fun,

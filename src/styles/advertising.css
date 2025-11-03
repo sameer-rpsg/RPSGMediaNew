@@ -374,6 +374,7 @@ img[draggable="false"] {
   display: flex;
   position: relative;
   border: 1.5px solid #000;
+  background-color: transparent;
   /* position: absolute;
   top: 50%;
   transform: translateY(-200%); */
@@ -945,7 +946,7 @@ svg:not(:root) {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem;
+  padding: 1rem;
   font-size: 1.5rem;
 }
 

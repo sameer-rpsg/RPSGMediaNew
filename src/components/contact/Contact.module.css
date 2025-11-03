@@ -1,6 +1,7 @@
 /* contact_informations */
 .contact_informations {
     padding: 2rem 1rem;
+    background-color: #fff;
 }
 
 .contact_informations__item {
@@ -22,7 +23,7 @@
     position: relative;
     width: 100%;
     font-family: var(--secondaryfontMedium);
-    background-color: #000;
+    color: #000;
 }
 .first {
     grid-column: 1 / span 2;
@@ -38,10 +39,10 @@
     padding-top: 1rem;
 }
 .split {
-    background: currentColor;
+    background: #000;
     height: 1px;
     left: 0;
-    opacity: .25;
+    opacity: 1;
     position: absolute;
     transform: scaleX(1);
     width: 100%;
@@ -132,6 +133,10 @@
   margin-bottom: 4rem;
 }
 
+.inputGroupComb{
+  display: flex;
+  justify-content: space-between;
+}
 .inputGroup input,
 .inputGroup textarea {
   width: 100%;
@@ -208,7 +213,9 @@
     align-items: center;
     justify-content: space-between;
 }
-
+.inputGroupEmail,.inputGroupTel{
+position: relative;
+}
 /* Responsive */
 @media (max-width: 1024px) {
   .contactSection {
@@ -236,6 +243,15 @@
 }
 }
 
+@media (max-width: 479px) {
+.inputGroupComb{
+  flex-direction: column;
+  margin-bottom: 0;
+}
+.inputGroupEmail,.inputGroupTel{
+margin-bottom: 4rem;
+}
+}
 @media (max-width: 320px) {
 .ContactForm_bottomSubmitWrapper{
     flex-direction: column;

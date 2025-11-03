@@ -8,17 +8,6 @@ import { useGSAP } from "@gsap/react";
 const ProgressCarousel = () => {
   const slides = [
     {
-      src: "/assets/selectedimagescompressed/_R1A9438_11zon.jpg",
-      alt: "Image 1",
-      eventsName:"- THR Top 50 Creators"
-    },
-    {
-      src: "/assets/selectedimagescompressed/Manifest (Adil Hasan) 02_11zon.jpg",
-      alt: "Image 2",
-      eventsName:"- FMWW 2024"
-
-    },
-    {
       src: "/assets/selectedimagescompressed/Manifest x Vaani Kapoor 14-08-253904 copy 2_11zon.jpg",
       alt: "Image 3",
             eventsName:"- Esquire Exclusive"
@@ -28,6 +17,17 @@ const ProgressCarousel = () => {
       src: "/assets/selectedimagescompressed/250726 - 1 - 310_(2) copy a copy_11zon.jpg",
       alt: "Image 4",
     },
+     {
+      src: "/assets/selectedimagescompressed/_R1A9438_11zon.jpg",
+      alt: "Image 1",
+      eventsName:"- THR Top 50 Creators"
+    },
+    {
+      src: "/assets/selectedimagescompressed/Manifest (Adil Hasan) 02_11zon.jpg",
+      alt: "Image 2",
+      eventsName:"- FMWW 2024"
+
+    }
   ];
   const containerRef = useRef(null);
   const textRefs = useRef([]);
