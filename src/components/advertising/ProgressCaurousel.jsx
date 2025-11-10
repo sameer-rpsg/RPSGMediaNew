@@ -5,6 +5,7 @@ import "@splidejs/react-splide/css"; // Or use "/css/core", "/css/skyblue", etc.
 import { FaPlus } from "react-icons/fa6";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import FadeSpan from "../common/FadeSpan";
 const ProgressCarousel = () => {
   const slides = [
     {
@@ -89,17 +90,22 @@ const toggleCard = (index) => {
   };
   return (
     <div id="modern-solutions" ref={containerRef}>
+     <FadeSpan delay={400}>
       <div className="statement">
         <h2 className="modern-solutions_text text--display statement__heading">
           Modern solutions for your brand
         </h2>
       </div>
+      </FadeSpan>
       <div className="recirculation recirculation--no-padding-top">
+     <FadeSpan delay={400}>
         <div className="headline headline--no-padding-top recirculation__headline">
           <h3 className="modern-solutions_text text--subtitle1 headline__title">
             A website platform with you in mind
           </h3>
         </div>
+        </FadeSpan>
+     <FadeSpan delay={600}>
         <div className="recirulation__cards-container">
           <Splide
             options={{
@@ -183,6 +189,7 @@ const toggleCard = (index) => {
             <div className="my-slider-progress-bar"></div>
           </div>
         </div>
+        </FadeSpan>
       </div>
     </div>
   );

@@ -3,27 +3,50 @@ import styles from "@/components/about/About.module.css";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitText from "gsap/dist/SplitText";
-gsap.registerPlugin(ScrollTrigger,SplitText);
+import FadeSpan from "../common/FadeSpan";
+import Aos from "aos";
+gsap.registerPlugin(ScrollTrigger, SplitText);
 const Manifesto = () => {
   const manifestoData = [
     { id: 1, text: "Design is not tequila. It can’t make everyone happy." },
-    { id: 2, text: "We love clarity and we’re straight talkers. Expect the courage to do things differently." },
-    { id: 3, text: "We don't shy away from difficult questions or tough projects. When push comes to shove, we do not run for the hills." },
-    { id: 4, text: "Remember we are all in this together and doing our best. Please be nice." },
-    { id: 5, text: "We always try to step outside our comfort zone. That’s part of the reason we got here." },
-    { id: 6, text: "We work hard and try to play harder. We stay playful and never take ourselves too seriously. Yeah, no." },
-    { id: 7, text: "No clients were ever harmed in the making of all this… wait. Yep, not even one, we’ve double-checked this." },
-    { id: 8, text: "We want to leave work happy and that’s non-negotiable. We will all be dead soon, brands and companies included." },
+    {
+      id: 2,
+      text: "We love clarity and we’re straight talkers. Expect the courage to do things differently.",
+    },
+    {
+      id: 3,
+      text: "We don't shy away from difficult questions or tough projects. When push comes to shove, we do not run for the hills.",
+    },
+    {
+      id: 4,
+      text: "Remember we are all in this together and doing our best. Please be nice.",
+    },
+    {
+      id: 5,
+      text: "We always try to step outside our comfort zone. That’s part of the reason we got here.",
+    },
+    {
+      id: 6,
+      text: "We work hard and try to play harder. We stay playful and never take ourselves too seriously. Yeah, no.",
+    },
+    {
+      id: 7,
+      text: "No clients were ever harmed in the making of all this… wait. Yep, not even one, we’ve double-checked this.",
+    },
+    {
+      id: 8,
+      text: "We want to leave work happy and that’s non-negotiable. We will all be dead soon, brands and companies included.",
+    },
   ];
 
- const textRefs = useRef([]);
- const numberRefs = useRef([]);
+  const textRefs = useRef([]);
+  const numberRefs = useRef([]);
   const rafId = useRef(null);
 
   useEffect(() => {
     // ensure refs array length is correct
     textRefs.current = textRefs.current.slice(0, manifestoData.length);
- numberRefs.current = numberRefs.current.slice(0, manifestoData.length);
+    numberRefs.current = numberRefs.current.slice(0, manifestoData.length);
     const checkCenter = () => {
       const centerY = window.innerHeight / 2;
       let closestIndex = -1;
@@ -77,8 +100,7 @@ const Manifesto = () => {
     };
   }, []);
 
-
-const paraRef = useRef(null);
+  const paraRef = useRef(null);
 
   useEffect(() => {
     const el = paraRef.current;
@@ -93,37 +115,41 @@ const paraRef = useRef(null);
     const splitWords = new SplitText(splitLines.lines, {
       type: "lines",
       // wordsClass: "extra-split-word",
-       linesClass: "extra-split-line",
+      linesClass: "extra-split-line",
     });
 
     // Animate the words inside each line
-    const tl = gsap.timeline({scrollTrigger: {
+    const tl = gsap.timeline({
+      scrollTrigger: {
         trigger: el,
         start: "top 85%",
         toggleActions: "play none none reverse",
-      },});
-    
-    tl.from(splitWords.lines, {
-      opacity: 0,
-      yPercent: 100,
-      ease: "power3.out",
-      duration: 1,
-      stagger: 0.05, // each word staggered
-    }
-    // ,"a").to(".split",{
-    //   transform:"scaleX(1)",
-    //   transformOrigin:"left",
-    //   delay:0.5
-    // },"a"),
-    // tl.fromTo(".will-animate",{
-    //   opacity:0
-    // },{
-    //   duration:1,
-    //   ease:"linear",
-    //   opacity:1
-    // }
-  )
-    
+      },
+    });
+
+    tl.from(
+      splitWords.lines,
+      {
+        opacity: 0,
+        yPercent: 100,
+        ease: "power3.out",
+        duration: 1,
+        stagger: 0.05, // each word staggered
+      }
+      // ,"a").to(".split",{
+      //   transform:"scaleX(1)",
+      //   transformOrigin:"left",
+      //   delay:0.5
+      // },"a"),
+      // tl.fromTo(".will-animate",{
+      //   opacity:0
+      // },{
+      //   duration:1,
+      //   ease:"linear",
+      //   opacity:1
+      // }
+    );
+
     // Cleanup
     return () => {
       splitWords.revert();
@@ -131,12 +157,18 @@ const paraRef = useRef(null);
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+    Aos.refreshHard();
+  }, []);
   return (
     <div className={styles.manifesto}>
       <div className={`${styles.g_row} ${styles.manifesto_header}`}>
-        <h2 className={`${styles.manifesto_title} ${styles.g_col}`}>
-          Manifesto
-        </h2>{" "}
+        <FadeSpan delay={400}>
+          <h2 className={`${styles.manifesto_title} ${styles.g_col}`}>
+            Manifesto
+          </h2>
+        </FadeSpan>
         <p className={styles.manifesto_para} ref={paraRef}>
           Design is a process, not a multiple-choice event. Ours is focused on
           uncovering the essential and allowing it to guide the way forward. At
@@ -160,12 +192,14 @@ const paraRef = useRef(null);
               />
             </div>
             <h3 className={styles.g_row}>
-              <span className={`${styles.g_col} ${styles.h2}`}  ref={(el) => (numberRefs.current[index] = el)}>
+              <span
+                className={`${styles.g_col} ${styles.h2}`}
+                ref={(el) => (numberRefs.current[index] = el)}
+              >
                 {item.id.toString().padStart(2, "")}
-                
               </span>
               <span
-                 ref={(el) => (textRefs.current[index] = el)}
+                ref={(el) => (textRefs.current[index] = el)}
                 className={`${styles.g_col} ${styles.p_small}`}
               >
                 {item.text}

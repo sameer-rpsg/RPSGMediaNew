@@ -94,6 +94,29 @@ const index = ({ params }) => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
+    useEffect(() => {
+    // Only run after component is mounted and DOM is ready
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        `.${styles.parallax_bg} img`,
+        { y: 0 },
+        {
+          y: 200,
+          duration: 4,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: `.${styles.Brand_parallax_section}`,
+            start: "top 0%",
+            scrub: true,
+            // markers: true,
+          },
+        }
+      );
+    });
+
+    // Cleanup GSAP/ScrollTrigger when unmounting
+    return () => ctx.revert();
+  }, []);
   return (
     <>
     <section id="section-5" className={styles.Brand_parallax_section}>

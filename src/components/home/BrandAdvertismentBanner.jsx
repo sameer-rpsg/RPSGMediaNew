@@ -1,5 +1,5 @@
-"use client";
-import React, { useRef } from "react";
+
+import React, { useEffect,useRef } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css";
@@ -8,7 +8,8 @@ import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
 import Image from "next/image";
 import gsap from "gsap";
-
+import FadeSpan from "../common/FadeSpan";
+import Aos from "aos";
 const slidesData = [
   {
     type: "full",
@@ -28,8 +29,7 @@ const slidesData = [
   {
     type: "full",
     bgType: "dark",
-    videoUrl:
-      "/assets/videos/Toast_10 (1).mp4",
+    videoUrl: "/assets/videos/Toast_10 (1).mp4",
     para: "E-commerce",
     // emm: "10+ years of expertise",
     emm: ["10+ years of expertise"],
@@ -53,8 +53,7 @@ const slidesData = [
     bgType: "dark",
     para: "Catalyzed ~71,000",
     emm: ["pre-orders after brand reveal", "(approximately $5.68 billion)."],
-    videoUrl:
-      "/assets/videos/homeherovideo.mp4",
+    videoUrl: "/assets/videos/homeherovideo.mp4",
     // emm: "generated within 90 days of launch",
     // img: "https://images.prismic.io/rejouice-2024/Z1m0-JbqstJ98Vh9_pergola-module-floor-1-360-grey-blue-bioclimatic-ceiling-and-curtains2.png?auto=format,compress",
   },
@@ -89,21 +88,25 @@ const slidesData = [
 const BrandAdvertismentBanner = () => {
   const videoRefs = useRef([]); // store refs for all videos
   const tweenRefs = useRef([]);
-
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+    Aos.refreshHard();
+  }, []);
   return (
     <div className={styles.BrandAdvertismentBanner_container}>
-      <h2 className={styles.BrandAdvertismentBanner_heading}>
-      Premium Brands Advertise Here. <br />
-      You Should Too.
-      </h2>
-
+      <FadeSpan delay={400}>
+        <h2 className={styles.BrandAdvertismentBanner_heading}>
+          Premium Brands Advertise Here. <br />
+          You Should Too.
+        </h2>
+      </FadeSpan>
       <div className={`${styles.marquee__container} ${styles.drag}`}>
         <div className={styles.marquee_slider}>
           <div className={styles.enter_animation__wrapper}>
             <div className={styles.card__wrapper}>
               <Splide
                 options={{
-                    type: "loop",
+                  type: "loop",
                   drag: "free",
                   focus: "center",
                   arrows: false,

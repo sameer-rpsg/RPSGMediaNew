@@ -1,8 +1,10 @@
+import React,{useEffect} from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import FadeSpan from "../common/FadeSpan";
+import Aos from "aos";
 
 const NewsLandingPage = () => {
   useGSAP(() => {
@@ -13,6 +15,33 @@ const NewsLandingPage = () => {
       ease: "linear",
     });
   });
+    useEffect(() => {
+    Aos.init();
+    Aos.refreshHard();
+  }, []);
+      useEffect(() => {
+    // Only run after component is mounted and DOM is ready
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+       ".image__pictures img",
+        { y: 0 },
+        {
+          y: 50,
+          duration: 1,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: ".news-landing-page_image-wrap",
+            start: "top 0%",
+            scrub: true,
+            // markers: true,
+          },
+        }
+      );
+    });
+
+    // Cleanup GSAP/ScrollTrigger when unmounting
+    return () => ctx.revert();
+  }, []);
   return (
     <>
       <div className="news-landing-page">
@@ -25,6 +54,7 @@ const NewsLandingPage = () => {
               className=""
             />
           </picture>
+                    <FadeSpan delay={400}>
           <div className="news-landing-page_overlay">
             <div className="news-landing-page_content">
               {/* <p className="news-landing-page_content_para">DEPT®/Insights </p> */}
@@ -51,6 +81,7 @@ const NewsLandingPage = () => {
               </h3>
             </div>
           </div>
+            </FadeSpan>
         </div>
       </div>
     </>

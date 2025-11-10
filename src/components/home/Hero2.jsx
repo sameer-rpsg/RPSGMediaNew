@@ -268,6 +268,29 @@ const Hero2 = () => {
     // return null; // purely side-effect component
   }, []);
 
+    useEffect(() => {
+    // Only run after component is mounted and DOM is ready
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+       ".mbl_heroVideo",
+        { y: 0 },
+        {
+          y: 200,
+          duration: 4,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: ".mbl_hero",
+            start: "top 0%",
+            scrub: true,
+            // markers: true,
+          },
+        }
+      );
+    });
+
+    // Cleanup GSAP/ScrollTrigger when unmounting
+    return () => ctx.revert();
+  }, []);
   return (
     <>
       <section className="home__hero">

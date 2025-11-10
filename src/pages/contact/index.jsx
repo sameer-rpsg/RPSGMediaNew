@@ -5,11 +5,11 @@ import React from 'react'
 
 const index = () => {
   return (
-    <>
+    <div style={{position:"relative", zIndex:"2"}}>
    <ContactForm/>
    {/* <Contact/> */}
    <ContactInfo/>
-    </>
+    </div>
   )
 }
 

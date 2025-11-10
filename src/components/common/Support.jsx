@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import SplitText from "gsap/dist/SplitText";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger,SplitText);
+import FadeSpan from "./FadeSpan";
+gsap.registerPlugin(ScrollTrigger, SplitText);
 const Support = () => {
   const paraRef = useRef(null);
 
@@ -19,37 +20,41 @@ const Support = () => {
     const splitWords = new SplitText(splitLines.lines, {
       type: "lines",
       // wordsClass: "extra-split-word",
-       linesClass: "extra-split-line",
+      linesClass: "extra-split-line",
     });
 
     // Animate the words inside each line
-    const tl = gsap.timeline({scrollTrigger: {
+    const tl = gsap.timeline({
+      scrollTrigger: {
         trigger: el,
         start: "top 85%",
         toggleActions: "play none none reverse",
-      },});
-    
-    tl.from(splitWords.lines, {
-      opacity: 0,
-      yPercent: 100,
-      ease: "power3.out",
-      duration: 1,
-      stagger: 0.05, // each word staggered
-    }
-    // ,"a").to(".split",{
-    //   transform:"scaleX(1)",
-    //   transformOrigin:"left",
-    //   delay:0.5
-    // },"a"),
-    // tl.fromTo(".will-animate",{
-    //   opacity:0
-    // },{
-    //   duration:1,
-    //   ease:"linear",
-    //   opacity:1
-    // }
-  )
-    
+      },
+    });
+
+    tl.from(
+      splitWords.lines,
+      {
+        opacity: 0,
+        yPercent: 100,
+        ease: "power3.out",
+        duration: 1,
+        stagger: 0.05, // each word staggered
+      }
+      // ,"a").to(".split",{
+      //   transform:"scaleX(1)",
+      //   transformOrigin:"left",
+      //   delay:0.5
+      // },"a"),
+      // tl.fromTo(".will-animate",{
+      //   opacity:0
+      // },{
+      //   duration:1,
+      //   ease:"linear",
+      //   opacity:1
+      // }
+    );
+
     // Cleanup
     return () => {
       splitWords.revert();
@@ -108,10 +113,10 @@ const Support = () => {
             ease: "power4.inOut",
             duration: 0.8,
             rotate: "222deg",
-            backgroundColor:"gray",
+            backgroundColor: "gray",
           },
           "a"
-        )
+        );
 
       const handleClick = () => {
         if (tl.isActive()) return; // Avoid triggering animations if one is already active
@@ -132,10 +137,15 @@ const Support = () => {
   }, []);
   return (
     <div id="support" className="support support--no-padding-top">
-      <h2 className="support_text statement__heading text--light support__headline responsive-support__title">
-        Licensing
-      </h2>
-      <p className="support__headline_para responsive-support__title" ref={paraRef}>
+      <FadeSpan delay={400}>
+        <h2 className="support_text statement__heading text--light support__headline responsive-support__title">
+          Licensing
+        </h2>
+      </FadeSpan>
+      <p
+        className="support__headline_para responsive-support__title"
+        ref={paraRef}
+      >
         RPSG Media develops media licensing and brand collaborations with its
         world-renowned brands and unique, preeminent editorial content. Together
         with partners we develop innovative consumer products, platforms and

@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 80px;
+  /* height: 80px; */
   background-color: rgba(255, 255, 255, 0);
   display: flex;
   padding: 1.5rem 3rem 0 3rem;
@@ -13,11 +13,13 @@
   align-items: center;
   font-family: var(--secondaryfontRegular);
   color: #ffffff;
+  backdrop-filter: blur(30px);
+  background: linear-gradient(180deg,#000,transparent);
 }
 .logoCntr {
   position: relative;
-  width: 130px;
-  height: 70px;
+  width: 120px;
+  height: auto;
   cursor: pointer;
 }
 .logoCntr img {

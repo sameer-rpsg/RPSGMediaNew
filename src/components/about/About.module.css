@@ -34,6 +34,7 @@
     letter-spacing: -.01em;
     ---letter-spacing: -0.01em;
     max-width: 50%;
+    text-align: justify;
 }
 
 .manifesto_statements {
@@ -124,6 +125,7 @@
     will-change: opacity, color;
     opacity: 0.4;
     max-width: 25%;
+    text-align: justify;
 }
 
 .p_small.active {

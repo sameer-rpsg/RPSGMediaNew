@@ -6,7 +6,7 @@ import "@/styles/hero.css"
 import "@/styles/home.css"
 import "@/styles/advertising.css"
 import "@/styles/newsroom.css"
-
+import "aos/dist/aos.css";
 export default function App({ Component, pageProps }) {
 
   return(

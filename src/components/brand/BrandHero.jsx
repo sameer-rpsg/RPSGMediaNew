@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import styles from "@/components/brand/Brand.module.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -8,7 +8,7 @@ import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BrandHero = ({params}) => {
+const BrandHero = ({ params }) => {
   // useGSAP(() => {
   //   gsap.to(`.${styles.parallax_bg}`, {
   //     yPercent: 20,
@@ -23,35 +23,66 @@ const BrandHero = ({params}) => {
   // });
 
   const brands = [
-    { name: "Manifest", logo: "/assets/brandlogos/Manifest 1.png", slug: "Manifest" },
+    {
+      name: "Manifest",
+      logo: "/assets/brandlogos/Manifest 1.png",
+      slug: "Manifest",
+    },
     { name: "THR", logo: "/assets/brandlogos/THR 1.png", slug: "thr" },
-    { name: "Esquire", logo: "/assets/brandlogos/Esquire 1.png", slug: "Esquire" },
-    { name: "Robb report", logo: "/assets/brandlogos/Robb Report 1.png", slug: "robbreport" },
+    {
+      name: "Esquire",
+      logo: "/assets/brandlogos/Esquire 1.png",
+      slug: "Esquire",
+    },
+    {
+      name: "Robb report",
+      logo: "/assets/brandlogos/Robb Report 1.png",
+      slug: "robbreport",
+    },
   ];
-//  const { slug } = params;
-//   const brand = brandData[slug];
+  //  const { slug } = params;
+  //   const brand = brandData[slug];
+  useEffect(() => {
+    // Only run after component is mounted and DOM is ready
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        `.${styles.parallax_bg} img`,
+        { y: 0 },
+        {
+          y: 200,
+          duration: 4,
+          ease: "linear",
+          scrollTrigger: {
+            trigger: `.${styles.Brand_parallax_section}`,
+            start: "top 0%",
+            scrub: true,
+            // markers: true,
+          },
+        }
+      );
+    });
+
+    // Cleanup GSAP/ScrollTrigger when unmounting
+    return () => ctx.revert();
+  }, []);
   return (
     <section id="section-5" className={styles.Brand_parallax_section}>
       <div className={styles.parallax_bg}>
-        <img
-          src="/assets/images/Asset 5.webp"
-          alt=""
-        />
+        <img src="/assets/images/Asset 5.webp" alt="" />
       </div>
 
-      <ul className={`clients-tile ${styles.about_clients_tile}`} style={{ padding: "3rem", margin:0, gap:"1rem" }}>
+      <ul
+        className={`clients-tile ${styles.about_clients_tile}`}
+        style={{ padding: "3rem", margin: 0, gap: "1rem" }}
+      >
         {brands.map((brand, i) => (
-          <li
-            key={i}
-            className="our_client_logo"
-            style={{ height:"150px" }}
-          >
+          <li key={i} className="our_client_logo" style={{ height: "150px" }}>
             <Link
               href={`/brands/${brand.slug}`}
               className="our_client_logo_card card--client-logo"
-              style={{display:"flex",width:"100%",height:"100%"}}
+              style={{ display: "flex", width: "100%", height: "100%" }}
             >
-              <div className="card__center" style={{height:"100%"}}>
+              <div className="card__center" style={{ height: "100%" }}>
                 <img
                   src={brand.logo}
                   alt={brand.name}

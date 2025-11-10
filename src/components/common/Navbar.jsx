@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect,useRef, useState } from "react";
 import style from "@/styles/navbar2.module.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,6 +10,10 @@ import { FaXTwitter } from "react-icons/fa6";
 import Button from "./Button";
 import gsap from "gsap";
 import logoSrc from "../../../public/assets/rpsg-logo.png";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { useRouter } from "next/router";
+gsap.registerPlugin(ScrollTrigger);
 const Navbar = () => {
   //   const [logoSrc, setLogoSrc] = useState("/rpsg-logo.png");
   const [active, setActve] = useState(false);
@@ -17,6 +21,7 @@ const Navbar = () => {
   const sidebarRef = useRef(null);
   const overlayRef = useRef(null);
   // const lenis = useLenis();
+  const router = useRouter();
 
   const mainLinks = [
     { name: "ABOUT", href: "/about" },
@@ -62,13 +67,7 @@ const Navbar = () => {
     },
   ];
 
-  const allowed = [
-    "ABOUT",
-    "ADVERTISING",
-    "BRANDS",
-    "NEWSROOM",
-    "CONTACT",
-  ];
+  const allowed = ["ABOUT", "ADVERTISING", "BRANDS", "NEWSROOM", "CONTACT"];
   const openSidebar = () => {
     setIsOpen(true);
     // Stop Lenis scroll
@@ -114,6 +113,25 @@ const Navbar = () => {
       },
     });
   };
+  useEffect(() => {
+    if (window.innerWidth < 600) return;
+    const showAnim = gsap
+      .from(`.${style.navbar_wrapper2}`, {
+        yPercent: -110,
+        paused: true,
+        duration: 0.2,
+      })
+      .progress(1);
+
+    ScrollTrigger.create({
+      start: "top top",
+      end: "max",
+      // markers: true,
+      onUpdate: (self) => {
+        self.direction === -1 ? showAnim.play() : showAnim.reverse();
+      },
+    });
+  },[router.asPath]);
   return (
     <>
       {isOpen && (

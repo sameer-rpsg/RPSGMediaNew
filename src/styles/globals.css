@@ -111,6 +111,25 @@ audio, canvas {
   background-color: #ec3c36 !important;
 
 }
+[data-aos^=clip][data-aos^=clip] {
+    /* opacity: 0; */
+    clip-path: inset(100% 0 0 0) !important;
+    transition: all .2s ease;
+  }
+  [data-aos^=clip][data-aos^=clip].aos-animate {
+    /* opacity: 1; */
+        clip-path: inset(0 0 0 0) !important;
+    transform: translateZ(0);
+}
+
+[data-aos][data-aos][data-aos-easing=ease-in-out-sine], body[data-aos-easing=ease-in-out-sine] [data-aos] {
+    transition-timing-function:
+        cubic-bezier(.445, .05, .55, .95);
+}
+
+[data-aos][data-aos][data-aos-duration="300"], body[data-aos-duration="300"] [data-aos] {
+    transition-duration: .3s;
+}
 
 /* @media (prefers-color-scheme: light) {
   html {
@@ -549,7 +568,7 @@ audio, canvas {
 
 .hamburger .line {
   width: 23px;
-  height: 2px;
+  height: 3px;
   background-color: rgb(255, 255, 255);
   display: block;
   margin: 4px auto;
