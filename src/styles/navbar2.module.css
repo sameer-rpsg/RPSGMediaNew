@@ -13,8 +13,8 @@
   align-items: center;
   font-family: var(--secondaryfontRegular);
   color: #ffffff;
-  backdrop-filter: blur(30px);
-  background: linear-gradient(180deg,#000,transparent);
+  /* backdrop-filter: blur(30px); */
+  /* background: linear-gradient(180deg,#000,transparent); */
 }
 .logoCntr {
   position: relative;

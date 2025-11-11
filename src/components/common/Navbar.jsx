@@ -1,4 +1,4 @@
-import React, { useEffect,useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import style from "@/styles/navbar2.module.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -114,24 +114,84 @@ const Navbar = () => {
     });
   };
   useEffect(() => {
-    if (window.innerWidth < 600) return;
-    const showAnim = gsap
-      .from(`.${style.navbar_wrapper2}`, {
-        yPercent: -110,
-        paused: true,
-        duration: 0.2,
-      })
-      .progress(1);
+    if (typeof window === "undefined" || window.innerWidth < 600) return;
 
-    ScrollTrigger.create({
-      start: "top top",
-      end: "max",
-      // markers: true,
-      onUpdate: (self) => {
-        self.direction === -1 ? showAnim.play() : showAnim.reverse();
-      },
-    });
-  },[router.asPath]);
+    const navbar = document.querySelector(`.${style.navbar_wrapper2}`);
+    if (!navbar) return;
+
+    // Helper to clear only navbar triggers
+    const killNavbarTriggers = () => {
+      ScrollTrigger.getAll()
+        .filter((t) => t.vars?.id?.startsWith("navbar"))
+        .forEach((t) => t.kill());
+    };
+
+    const initNavbarAnimations = () => {
+      killNavbarTriggers();
+
+      // === Navbar hide/show on scroll ===
+      const showAnim = gsap
+        .fromTo(
+          navbar,
+          { yPercent: -110 },
+          { yPercent: 0, paused: true, duration: 0.3, ease: "power2.out" }
+        )
+        .progress(1);
+
+      ScrollTrigger.create({
+        id: "navbar-showhide",
+        start: "top top",
+        end: "max",
+        onUpdate: (self) => {
+          self.direction === -1 ? showAnim.play() : showAnim.reverse();
+        },
+      });
+
+      // === Gradient + blur after 5% scroll ===
+      ScrollTrigger.create({
+        id: "navbar-gradient",
+        start: 0,
+        end: "max",
+        onUpdate: (self) => {
+          if (self.progress > 0.05) {
+            gsap.to(navbar, {
+              background: "linear-gradient(180deg, #000, transparent)",
+              backdropFilter: "blur(30px)",
+              duration: 0.3,
+              ease: "linear",
+            });
+          } else {
+            gsap.to(navbar, {
+              background: "transparent",
+              backdropFilter: "blur(0px)",
+              duration: 0.3,
+              ease: "linear",
+            });
+          }
+        },
+      });
+
+      ScrollTrigger.refresh();
+    };
+
+    // Initialize on mount
+    initNavbarAnimations();
+
+    // 🔁 Re-initialize after route change complete
+    const handleRouteChange = () => {
+      setTimeout(() => {
+        initNavbarAnimations();
+      }, 300); // wait for new page DOM to render
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    // Cleanup
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+      killNavbarTriggers();
+    };
+  }, [router]);
   return (
     <>
       {isOpen && (
