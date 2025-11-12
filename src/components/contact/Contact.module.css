@@ -75,7 +75,7 @@
         margin-left: 0;
         margin-right: var(--grid-margin);
         margin-right: 0;
-        padding-bottom: 9rem;
+        /* padding-bottom: 9rem; */
     }
     .first {
         grid-column: 1 / span 6;
@@ -109,7 +109,7 @@
   align-items: flex-start;
   background: #000;
   color: #fff;
-  padding: 100px 3rem;
+  padding: 130px 3rem 100px;
   font-family: var(--secondaryfontMedium);
   gap: 6rem;
   flex-wrap: wrap;
@@ -130,7 +130,7 @@
 
 .inputGroup {
   position: relative;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .inputGroupComb{
@@ -209,9 +209,9 @@
   opacity: 0.7;
 }
 .ContactForm_bottomSubmitWrapper{
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; */
 }
 .inputGroupEmail,.inputGroupTel{
 position: relative;
@@ -231,7 +231,7 @@ position: relative;
 
 @media (max-width: 767px) {
     .contactSection {
-        padding: 100px 1rem;
+        padding: 120px 1rem;
     }
 
   .contactSection_left h2 {

@@ -326,7 +326,7 @@ audio, canvas {
 
 .about_title {
   /* text-transform: uppercase; */
-  font-size: 4rem;
+  /* font-size: 4rem; */
   margin-bottom: 1rem;
   font-family: var(--secondaryfontBold);
   letter-spacing: 0.01em;

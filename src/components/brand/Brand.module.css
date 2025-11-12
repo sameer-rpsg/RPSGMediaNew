@@ -46,10 +46,19 @@
 .about_clients_tile li:hover{
   background-color: #afacac;
 }
+.our_client_logoBrand{
+  height: 100px !important;
+}
+.our_client_logoBrand .card__centerBrand{
+  height: 100% !important;
+}
 @media only screen and (min-width:768px) {
   .news_landing_page_overlay_inner {
     padding: 1rem 2rem;
   }
+  .our_client_logoBrand{
+  height: 150px !important;
+}
 }
 
 @media only screen and (min-width:1024px) {

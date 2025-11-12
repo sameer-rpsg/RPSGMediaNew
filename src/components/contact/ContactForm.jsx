@@ -197,7 +197,7 @@ const ContactForm = () => {
           <FadeSpan delay={600}>
             <p className={styles.terms}>
               By clicking the Submit button,
-              <br />
+              {/* <br /> */}
               you agree to our <a href="#">Privacy Policy</a> terms
             </p>
           </FadeSpan>

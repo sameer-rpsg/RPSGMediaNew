@@ -469,9 +469,17 @@ img[draggable="false"] {
   opacity: 0.9;
   transition: opacity 0.5s ease;
 }
+@media only screen and (max-width:600px){
+  .recirculation__text-card{
+    padding: 1rem;
+  }
+.recirculation__text-card p{
+  font-size: 1rem;
+}
+}
 @media only screen and (min-width:991px) and (max-width:1199px){
   .recirculation__text-card p{
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 }
 .card_btn {

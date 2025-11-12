@@ -33,6 +33,7 @@ const Navbar = () => {
 
   const mediaLinks = [
     { name: "Manifest", href: "" },
+    { name: "Robb report, India", href: "" },
     { name: "The Hollywood Reporter", href: "" },
     { name: "Esquire, India", href: "" },
   ];
@@ -65,6 +66,15 @@ const Navbar = () => {
         <FaXTwitter key="x" />,
       ],
     },
+    {
+      name: "Media Kit",
+      href: "",
+      icons: [
+        <FaInstagram key="ig" />,
+        <FaFacebookF key="fb" />,
+        <FaXTwitter key="x" />,
+      ],
+    }
   ];
 
   const allowed = ["ABOUT", "ADVERTISING", "BRANDS", "NEWSROOM", "CONTACT"];
@@ -114,7 +124,7 @@ const Navbar = () => {
     });
   };
   useEffect(() => {
-    if (typeof window === "undefined" || window.innerWidth < 600) return;
+    if (typeof window === "undefined" || window.innerWidth < 0) return;
 
     const navbar = document.querySelector(`.${style.navbar_wrapper2}`);
     if (!navbar) return;

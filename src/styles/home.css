@@ -13,7 +13,7 @@
 .tagline {
     display: flex;
     flex-direction: column;
-    padding: 2.9rem 0;
+    padding: 0 0 2.9rem 0;
 }
 
 .tagline__wrapper {

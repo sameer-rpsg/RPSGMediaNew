@@ -76,13 +76,13 @@ const BrandHero = ({ params }) => {
         style={{ padding: "3rem", margin: 0, gap: "1rem" }}
       >
         {brands.map((brand, i) => (
-          <li key={i} className="our_client_logo" style={{ height: "150px" }}>
+          <li key={i} className={`our_client_logo ${styles.our_client_logoBrand}`}>
             <Link
               href={`/brands/${brand.slug}`}
               className="our_client_logo_card card--client-logo"
               style={{ display: "flex", width: "100%", height: "100%" }}
             >
-              <div className="card__center" style={{ height: "100%" }}>
+              <div className={`card__center ${styles.card__centerBrand}`}>
                 <img
                   src={brand.logo}
                   alt={brand.name}
