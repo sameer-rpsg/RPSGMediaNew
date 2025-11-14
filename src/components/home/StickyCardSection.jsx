@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import BottomLineAnimation from "../common/BottomLineAnimation";
 import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
@@ -13,9 +13,11 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaMinus, FaXTwitter } from "react-icons/fa6";
 import styles from "@/components/home/Home.module.css";
 import { FaPlus } from "react-icons/fa6";
+import { useRouter } from "next/router";
 gsap.registerPlugin(ScrollTrigger);
 
 const StickyCardSection = () => {
+  const router = useRouter();
   const StickyCardsData = [
     {
       id: 1,
@@ -81,49 +83,46 @@ const StickyCardSection = () => {
   };
 
   const stickyContainer = useRef(null);
-  useGSAP(
-    () => {
-      // if (window.innerWidth < 1200) return;
-      const stickyCards = document.querySelectorAll(
-        `.${styles.hollywood_section}`
-      );
-      stickyCards.forEach((card, index) => {
-        if (index < stickyCards.length - 1) {
-          ScrollTrigger.create({
-            trigger: card,
-            start: "top top",
-            endTrigger: stickyCards[stickyCards.length - 1],
-            end: "top top",
-            pin: true,
-            pinSpacing: false,
-          });
-        }
-        if (index < stickyCards.length - 1) {
-          ScrollTrigger.create({
-            trigger: stickyCards[index + 1],
-            start: "top bottom",
-            end: "top top",
-            onUpdate: (self) => {
-              const progress = self.progress;
-              const scale = 1 - progress * 0.5;
-              const rotation = (index % 2 === 0 ? 5 : -5) * progress;
-              const afterOpacity = progress;
-              // dynamic z-index calculation
-              //   const zIndexValue = Math.round((1 - progress) * 100) - index;
+  useEffect(() => {
+    // if (window.innerWidth < 1200) return;
+    const stickyCards = document.querySelectorAll(
+      `.${styles.hollywood_section}`
+    );
+    stickyCards.forEach((card, index) => {
+      if (index < stickyCards.length - 1) {
+        ScrollTrigger.create({
+          trigger: card,
+          start: "top top",
+          endTrigger: stickyCards[stickyCards.length - 1],
+          end: "top top",
+          pin: true,
+          pinSpacing: false,
+        });
+      }
+      if (index < stickyCards.length - 1) {
+        ScrollTrigger.create({
+          trigger: stickyCards[index + 1],
+          start: "top bottom",
+          end: "top top",
+          onUpdate: (self) => {
+            const progress = self.progress;
+            const scale = 1 - progress * 0.5;
+            const rotation = (index % 2 === 0 ? 5 : -5) * progress;
+            const afterOpacity = progress;
+            // dynamic z-index calculation
+            //   const zIndexValue = Math.round((1 - progress) * 100) - index;
 
-              gsap.set(card, {
-                scale: scale,
-                // zIndex: zIndexValue,
-                rotation: rotation,
-                "-after-opacity": afterOpacity,
-              });
-            },
-          });
-        }
-      });
-    },
-    { scope: stickyContainer }
-  );
+            gsap.set(card, {
+              scale: scale,
+              // zIndex: zIndexValue,
+              rotation: rotation,
+              "-after-opacity": afterOpacity,
+            });
+          },
+        });
+      }
+    });
+  }, [router.asPath, { scope: stickyContainer }]);
   return (
     <div className={styles.Sticky_card_wrapper} ref={stickyContainer}>
       {StickyCardsData.map((card) => {

@@ -345,106 +345,107 @@ const About = () => {
   const layersRef = useRef([]);
   const introDescRef = useRef(null);
   const router = useRouter();
-useGSAP(() => {
-  const ctx = gsap.context(() => {
-    const introDesc = introDescRef.current;
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const introDesc = introDescRef.current;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: "600% top",
-        scrub: 0.4,
-        pin: true,
-      },
-    });
-
-    gsap.from(".text_1reveal,.text_2reveal,.text_3reveal", {
-      autoAlpha: 0,
-      duration: 1,
-      ease: "power2.out",
-      delay: 1,
-    });
-
-    gsap.set([".text_2reveal, .text_3reveal"], { opacity: 0, y: 100 });
-
-    let mm = gsap.matchMedia();
-
-    mm.add("(min-width: 480px)", () => {
-      tl.to(".scroll_indicator", { opacity: 0 }, ">");
-      tl.from(".layer_1", { width: 0 }, ">-0.5");
-      tl.to(".text_1reveal", { y: -100 });
-      tl.to(".text_2reveal", { opacity: 1, y: 1 });
-
-      tl.from(
-        ".layer_2,.layer_3,.layer_4,.layer_5,.layer_6,.layer_7,.layer_8",
-        {
-          width: 0,
-          stagger: 0.01,
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "600% top",
+          scrub: 0.4,
+          pin: true,
         },
-        ">"
-      );
-
-      const widths = [
-        "100%",
-        "110%",
-        "120%",
-        "130%",
-        "140%",
-        "150%",
-        "160%",
-        "170%",
-      ];
-
-      widths.forEach((w, i) => {
-        tl.to(`.layer_${i + 1}`, { width: w }, "pa");
       });
 
-      tl.to(".text_2reveal", { opacity: 0, y: -100 }, "c");
-      tl.to(".text_3reveal", { opacity: 1, y: 1 }, "c");
+      gsap.from(".text_1reveal,.text_2reveal,.text_3reveal", {
+        autoAlpha: 0,
+        duration: 1,
+        ease: "power2.out",
+        delay: 1,
+      });
 
-      tl.to(introDesc, { height: "auto", duration: 0.8 }, "b");
-      tl.to(introDesc, { "--mask-pos": "0" }, "b");
-    });
+      gsap.set([".text_2reveal, .text_3reveal"], { opacity: 0, y: 100 });
 
-    mm.add("(max-width: 479px)", () => {
-      tl.to(".scroll_indicator", { opacity: 0 });
-      tl.from(".layer_1", { height: 0, width: 0 });
+      let mm = gsap.matchMedia();
 
-      tl.to(".text_1reveal", { y: -100 });
-      tl.to(".text_2reveal", { opacity: 1, y: 1 });
+      mm.add("(min-width: 480px)", () => {
+        tl.to(".scroll_indicator", { opacity: 0 }, ">");
+        tl.from(".layer_1", { width: 0 }, ">-0.5");
+        tl.to(".text_1reveal", { y: -100 });
+        tl.to(".text_2reveal", { opacity: 1, y: 1 });
 
-      tl.from(
-        ".layer_2,.layer_3,.layer_4,.layer_5,.layer_6,.layer_7,.layer_8",
-        {
-          opacity: 0,
-          height: 0,
-          width: 0,
-          stagger: 0.01,
+        tl.from(
+          ".layer_2,.layer_3,.layer_4,.layer_5,.layer_6,.layer_7,.layer_8",
+          {
+            width: 0,
+            stagger: 0.01,
+          },
+          ">"
+        );
+
+        const widths = [
+          "100%",
+          "110%",
+          "120%",
+          "130%",
+          "140%",
+          "150%",
+          "160%",
+          "170%",
+        ];
+
+        widths.forEach((w, i) => {
+          tl.to(`.layer_${i + 1}`, { width: w }, "pa");
+        });
+
+        tl.to(".text_2reveal", { opacity: 0, y: -100 }, "c");
+        tl.to(".text_3reveal", { opacity: 1, y: 1 }, "c");
+
+        tl.to(introDesc, { height: "auto", duration: 0.8 }, "b");
+        tl.to(introDesc, { "--mask-pos": "0" }, "b");
+      });
+
+      mm.add("(max-width: 479px)", () => {
+        tl.to(".scroll_indicator", { opacity: 0 });
+        tl.from(".layer_1", { height: 0, width: 0 });
+
+        tl.to(".text_1reveal", { y: -100 });
+        tl.to(".text_2reveal", { opacity: 1, y: 1 });
+
+        tl.from(
+          ".layer_2,.layer_3,.layer_4,.layer_5,.layer_6,.layer_7,.layer_8",
+          {
+            opacity: 0,
+            height: 0,
+            width: 0,
+            stagger: 0.01,
+          }
+        );
+
+        for (let i = 1; i <= 8; i++) {
+          tl.to(
+            `.layer_${i}`,
+            {
+              height: `${170 + (i - 1) * 10}vh`,
+              width: `${170 + (i - 1) * 10}vh`,
+            },
+            "pa"
+          );
         }
-      );
 
-      for (let i = 1; i <= 8; i++) {
-        tl.to(`.layer_${i}`, {
-          height: `${170 + (i - 1) * 10}vh`,
-          width: `${170 + (i - 1) * 10}vh`,
-        }, "pa");
-      }
+        tl.to(".text_2reveal", { opacity: 0, y: -100 }, "c");
+        tl.to(".text_3reveal", { opacity: 1, y: 1 }, "c");
 
-      tl.to(".text_2reveal", { opacity: 0, y: -100 }, "c");
-      tl.to(".text_3reveal", { opacity: 1, y: 1 }, "c");
+        tl.to(introDesc, { height: introDesc.scrollHeight }, "b");
+        tl.to(introDesc, { "--mask-pos": "0" }, "b");
+      });
+    }, containerRef);
 
-      tl.to(introDesc, { height: introDesc.scrollHeight }, "b");
-      tl.to(introDesc, { "--mask-pos": "0" }, "b");
-    });
-
-  }, containerRef);
-
-  // 🔥 Cleanup On Unmount
-  return () => ctx.revert();
-});
-
-
+    // 🔥 Cleanup On Unmount
+    return () => ctx.revert();
+  },[router.asPath]);
   return (
     <div className="layered-container" ref={containerRef}>
       <div className="layers-wrapper">
