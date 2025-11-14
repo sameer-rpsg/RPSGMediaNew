@@ -2,12 +2,14 @@ import React, { useEffect,useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useRouter } from "next/router";
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero2 = () => {
-const scope = useRef(null);
+const scopee = useRef(null);
+const router = useRouter();
 
-  useGSAP(() => {
+  useEffect(() => {
     // -----------------------------------
     // Scroll Lock Helper
     // -----------------------------------
@@ -169,68 +171,68 @@ const scope = useRef(null);
     // -----------------------------------
     // VIDEO STATE HANDLING
     // -----------------------------------
-    videoState();
+    // videoState();
 
-    function videoState() {
-      const wrapper = window.wrapper;
-      const videoContainer = wrapper?.querySelector(".home__hero__video");
-      const videoElement = videoContainer?.querySelector("video");
-      const videoSection = wrapper?.querySelector(".home__video");
+    // function videoState() {
+    //   const wrapper = window.wrapper;
+    //   const videoContainer = wrapper?.querySelector(".home__hero__video");
+    //   const videoElement = videoContainer?.querySelector("video");
+    //   const videoSection = wrapper?.querySelector(".home__video");
 
-      if (!videoElement) return;
+    //   if (!videoElement) return;
 
-      ScrollTrigger.create({
-        trigger: videoElement,
-        endTrigger: ".home__projects",
-        start: "top bottom",
-        end: "top top",
-        onEnter: () => {
-          if (!isVideoPlaying(videoElement)) videoElement.play();
-        },
-        onEnterBack: () => {
-          if (!isVideoPlaying(videoElement)) videoElement.play();
-          window.cursor?.leave(true);
-        },
-        onLeave: () => {
-          if (isVideoPlaying(videoElement)) videoElement.pause();
-          window.cursor?.leave(true);
-        },
-        onLeaveBack: () => {
-          if (isVideoPlaying(videoElement)) videoElement.pause();
-        },
-      });
+    //   ScrollTrigger.create({
+    //     trigger: videoElement,
+    //     endTrigger: ".home__projects",
+    //     start: "top bottom",
+    //     end: "top top",
+    //     onEnter: () => {
+    //       if (!isVideoPlaying(videoElement)) videoElement.play();
+    //     },
+    //     onEnterBack: () => {
+    //       if (!isVideoPlaying(videoElement)) videoElement.play();
+    //       window.cursor?.leave(true);
+    //     },
+    //     onLeave: () => {
+    //       if (isVideoPlaying(videoElement)) videoElement.pause();
+    //       window.cursor?.leave(true);
+    //     },
+    //     onLeaveBack: () => {
+    //       if (isVideoPlaying(videoElement)) videoElement.pause();
+    //     },
+    //   });
 
-      const updateCursor = () => {
-        videoElement.muted
-          ? window.cursor?.enter(videoContainer.dataset.cursor)
-          : window.cursor?.enter(videoContainer.dataset.cursorClick);
-      };
+    //   const updateCursor = () => {
+    //     videoElement.muted
+    //       ? window.cursor?.enter(videoContainer.dataset.cursor)
+    //       : window.cursor?.enter(videoContainer.dataset.cursorClick);
+    //   };
 
-      videoElement.addEventListener("click", () => {
-        videoElement.muted = !videoElement.muted;
-        updateCursor();
+    //   videoElement.addEventListener("click", () => {
+    //     videoElement.muted = !videoElement.muted;
+    //     updateCursor();
 
-        if (!isVideoPlaying(videoElement)) {
-          videoElement.play();
-          videoSection?.classList.remove("active");
-        }
-      });
+    //     if (!isVideoPlaying(videoElement)) {
+    //       videoElement.play();
+    //       videoSection?.classList.remove("active");
+    //     }
+    //   });
 
-      videoElement.addEventListener("mouseenter", updateCursor);
-      videoElement.addEventListener("mouseleave", () =>
-        window.cursor?.leave(true)
-      );
-    }
+    //   videoElement.addEventListener("mouseenter", updateCursor);
+    //   videoElement.addEventListener("mouseleave", () =>
+    //     window.cursor?.leave(true)
+    //   );
+    // }
 
-    function isVideoPlaying(video) {
-      return !!(
-        video.currentTime > 0 &&
-        !video.paused &&
-        !video.ended &&
-        video.readyState > 2
-      );
-    }
-  }, { scope }); // <— useGSAP scopes everything & auto-cleans
+    // function isVideoPlaying(video) {
+    //   return !!(
+    //     video.currentTime > 0 &&
+    //     !video.paused &&
+    //     !video.ended &&
+    //     video.readyState > 2
+    //   );
+    // }
+  }, [router.asPath]); // <— useGSAP scopes everything & auto-cleans
 
     useEffect(() => {
     // Only run after component is mounted and DOM is ready
@@ -257,7 +259,7 @@ const scope = useRef(null);
   }, []);
   return (
     <>
-      <section ref={scope} className="home__hero">
+      <section ref={scopee} className="home__hero">
         <div className="mbl_hero">
         <video
           className="mbl_heroVideo"
