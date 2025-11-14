@@ -345,146 +345,105 @@ const About = () => {
   const layersRef = useRef([]);
   const introDescRef = useRef(null);
   const router = useRouter();
-  useGSAP(
-    (context) => {
-      const introDesc = introDescRef.current;
-      // const ctx = context; // GSAP context for scoping
+useGSAP(() => {
+  const ctx = gsap.context(() => {
+    const introDesc = introDescRef.current;
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "600% top",
-          scrub: 0.4,
-          pin: true,
-          // pinSpacer:false,
-          // pinSpacing:false
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: "600% top",
+        scrub: 0.4,
+        pin: true,
+      },
+    });
+
+    gsap.from(".text_1reveal,.text_2reveal,.text_3reveal", {
+      autoAlpha: 0,
+      duration: 1,
+      ease: "power2.out",
+      delay: 1,
+    });
+
+    gsap.set([".text_2reveal, .text_3reveal"], { opacity: 0, y: 100 });
+
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 480px)", () => {
+      tl.to(".scroll_indicator", { opacity: 0 }, ">");
+      tl.from(".layer_1", { width: 0 }, ">-0.5");
+      tl.to(".text_1reveal", { y: -100 });
+      tl.to(".text_2reveal", { opacity: 1, y: 1 });
+
+      tl.from(
+        ".layer_2,.layer_3,.layer_4,.layer_5,.layer_6,.layer_7,.layer_8",
+        {
+          width: 0,
+          stagger: 0.01,
         },
+        ">"
+      );
+
+      const widths = [
+        "100%",
+        "110%",
+        "120%",
+        "130%",
+        "140%",
+        "150%",
+        "160%",
+        "170%",
+      ];
+
+      widths.forEach((w, i) => {
+        tl.to(`.layer_${i + 1}`, { width: w }, "pa");
       });
 
-      gsap.from(".text_1reveal,.text_2reveal,.text_3reveal", {
-        autoAlpha: 0,
-        duration: 1,
-        ease: "power2.out",
-        delay: 1,
-      });
+      tl.to(".text_2reveal", { opacity: 0, y: -100 }, "c");
+      tl.to(".text_3reveal", { opacity: 1, y: 1 }, "c");
 
-      gsap.set([".text_2reveal, .text_3reveal"], { opacity: 0, y: 100 });
+      tl.to(introDesc, { height: "auto", duration: 0.8 }, "b");
+      tl.to(introDesc, { "--mask-pos": "0" }, "b");
+    });
 
-      let mm = gsap.matchMedia();
+    mm.add("(max-width: 479px)", () => {
+      tl.to(".scroll_indicator", { opacity: 0 });
+      tl.from(".layer_1", { height: 0, width: 0 });
 
-      mm.add("(min-width: 480px)", () => {
-        tl.to(".scroll_indicator", { opacity: 0, ease: "linear" }, ">");
-        tl.from(".layer_1", { width: 0, ease: "linear" }, ">-0.5");
+      tl.to(".text_1reveal", { y: -100 });
+      tl.to(".text_2reveal", { opacity: 1, y: 1 });
 
-        tl.to(".text_1reveal", { y: -100, ease: "none" });
-        tl.to(".text_2reveal", { opacity: 1, y: 1, ease: "none" });
-
-        tl.from(
-          ".layer_2,.layer_3,.layer_4,.layer_5,.layer_6,.layer_7,.layer_8",
-          {
-            width: 0,
-            ease: "linear",
-            stagger: 0.01,
-          },
-          ">"
-        );
-
-        // expand widths
-        const widths = [
-          "100%",
-          "110%",
-          "120%",
-          "130%",
-          "140%",
-          "150%",
-          "160%",
-          "170%",
-        ];
-        widths.forEach((w, i) => {
-          tl.to(`.layer_${i + 1}`, { width: w, ease: "linear" }, "pa");
-        });
-
-        tl.to(".text_2reveal", { opacity: 0, y: -100, ease: "none" }, "c");
-        tl.to(".text_3reveal", { opacity: 1, y: 1, ease: "none" }, "c");
-
-        tl.to(
-          introDesc,
-          {
-            height: "auto",
-            duration: 0.8,
-            ease: "linear",
-          },
-          "b"
-        );
-        tl.to(
-          introDesc,
-          {
-            "--mask-pos": "0",
-            ease: "linear",
-          },
-          "b"
-        );
-      });
-
-      mm.add("(max-width: 479px)", () => {
-        tl.to(".scroll_indicator", { opacity: 0, ease: "linear" });
-        tl.from(".layer_1", { height: 0, width: 0, ease: "linear" });
-
-        tl.to(".text_1reveal", { y: -100, ease: "none" });
-        tl.to(".text_2reveal", { opacity: 1, y: 1, ease: "none" });
-
-        tl.from(
-          ".layer_2,.layer_3,.layer_4,.layer_5,.layer_6,.layer_7,.layer_8",
-          {
-            opacity: 0,
-            height: 0,
-            width: 0,
-            ease: "linear",
-            stagger: 0.01,
-          }
-        );
-
-        // expand layers on mobile
-        for (let i = 1; i <= 8; i++) {
-          tl.to(
-            `.layer_${i}`,
-            {
-              height: `${170 + (i - 1) * 10}vh`,
-              width: `${170 + (i - 1) * 10}vh`,
-            },
-            "pa"
-          );
+      tl.from(
+        ".layer_2,.layer_3,.layer_4,.layer_5,.layer_6,.layer_7,.layer_8",
+        {
+          opacity: 0,
+          height: 0,
+          width: 0,
+          stagger: 0.01,
         }
+      );
 
-        tl.to(".text_2reveal", { opacity: 0, y: -100, ease: "none" }, "c");
-        tl.to(".text_3reveal", { opacity: 1, y: 1, ease: "none" }, "c");
+      for (let i = 1; i <= 8; i++) {
+        tl.to(`.layer_${i}`, {
+          height: `${170 + (i - 1) * 10}vh`,
+          width: `${170 + (i - 1) * 10}vh`,
+        }, "pa");
+      }
 
-        tl.to(
-          introDesc,
-          {
-            height: introDesc.scrollHeight,
-            duration: 1,
-          },
-          "b"
-        );
-        tl.to(
-          introDesc,
-          {
-            "--mask-pos": "0",
-            duration: 1,
-            ease: "power2.inOut",
-          },
-          "b"
-        );
-      });
-      // 🔥 Cleanup function (this ensures isolation)
-      return () => {
-        mm.revert();
-      };
-    },
-    { scope: containerRef } // isolate this component
-  );
+      tl.to(".text_2reveal", { opacity: 0, y: -100 }, "c");
+      tl.to(".text_3reveal", { opacity: 1, y: 1 }, "c");
+
+      tl.to(introDesc, { height: introDesc.scrollHeight }, "b");
+      tl.to(introDesc, { "--mask-pos": "0" }, "b");
+    });
+
+  }, containerRef);
+
+  // 🔥 Cleanup On Unmount
+  return () => ctx.revert();
+});
+
 
   return (
     <div className="layered-container" ref={containerRef}>
