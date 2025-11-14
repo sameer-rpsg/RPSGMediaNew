@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero2 = () => {
-  useGSAP(() => {
+  useEffect(() => {
     // Scroll Lock Helper
     const toggleScroll = (enable = true) => {
       if (window.lenis) {
